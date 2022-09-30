@@ -1,0 +1,54 @@
+//NODE EXERCISE
+
+
+//USING CMD LINE, CREATE A FILE "ECHO.JS"
+ec2-user:~/environment/BootCampCourse/IntroToNodeJS $ touch echo.js
+ec2-user:~/environment/BootCampCourse/IntroToNodeJS $ ls
+echo.js  Hello.js  NodeExercise.txt  objectives2.md  objectives.md
+
+
+//INSIDE "ECHO.JS", WRITE A FUNCTION NAMED ECHO THAT TAKES 2 ARGUMENTS: "str" & "num"
+function NODEExercise () {
+    function echo (str, num) {
+    for(var i = 0; i < num; i++) {
+        console.log(str);
+    }
+  }
+  echo("Echo!!", 1);
+}
+
+NODEExercise ();
+
+
+//IT SHOULD PRINT OUT THE STRING , NUMBER NUMBER OF TIMES
+ec2-user:~/environment/BootCampCourse/IntroToNodeJS $ node echo.js
+Echo!!
+
+
+//ADD THE 2 EXAMPLES TO THE END OF YOUR FILE
+function NODEExercise () {
+    function echo (str, num) {
+    for(var i = 0; i < num; i++) {
+        console.log(str);
+    }
+  }
+  echo("Echo!!", 10);
+  echo("Tater Tots", 3);
+}
+
+
+//LASTLY, RUN THE CONTENTS OF "ECHO.JS" USING NODE
+ec2-user:~/environment/BootCampCourse/IntroToNodeJS $ node echo.js
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Echo!!
+Tater Tots
+Tater Tots
+Tater Tots

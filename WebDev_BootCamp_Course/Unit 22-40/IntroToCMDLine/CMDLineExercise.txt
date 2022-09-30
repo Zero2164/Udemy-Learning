@@ -1,0 +1,75 @@
+1 //MAKE NEW "animals" DIR                                                                                                                                                                                                                                                         
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ mkdir animals  
+1 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ mkdir animals
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls
+CMDLineExercise.txt  animals  hello.html  message.txt
+
+
+2 //INSIDE "animals" DIR, MAKE TWO NEW DIR'S CALLED "awesomeAnimals" & "sketchyAnimals"                                                                                                                                                                                                                           
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals $ mkdir awesomeAnimals sketchyAnimals                                                                                                                                                                                                 
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals $ ls                                                                                                                                                                                                                                  
+awesomeAnimals  sketchyAnimals  
+2 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ mkdir animals/awesomeAnimals animals/sketchyAnimals
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals
+awesomeAnimals  sketchyAnimals
+
+
+3 //INSIDE "awesomeAnimals" DIR, ADD THE FOLLOWING FILES: "Capybara.js", "ArcticFox.html", "Treefrog.txt "
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals# cd awesomeAnimals/                                                                                                                                                                                                                  
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/awesomeAnimals $ touch Capybara.js ArcticFox.html Treefrog.txt                                                                                                                                                                        
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/awesomeAnimals $ ls                                                                                                                                                                                                                   
+ArcticFox.html  Capybara.js  Treefrog.txt
+3 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ touch animals/awesomeAnimals/Capybara.js animals/awesomeAnimals/ArcticFox.html animals/awesomeAnimals/Treefrog.txt
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals/awesomeAnimals/
+ArcticFox.html  Capybara.js  Treefrog.txt
+
+
+4 //INSIDE "sketchyAnimals" DIR, ADD THE FOLLOWING FILES: "BrownRecluse.html", "BulletAnt.js "
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/awesomeAnimals $ cd ../sketchyAnimals/                                                                                                                                                                                                
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ touch BrownRecluse.html BulletAnt.js                                                                                                                                                                                 
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ ls                                                                                                                                                                                                                   
+BrownRecluse.html  BulletAnt.js    
+4 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ touch animals/sketchyAnimals/BrownRecluse.html animals/sketchyAnimals/BulletAnt.js
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals/sketchyAnimals/
+BrownRecluse.html  BulletAnt.js
+
+5 //ALSO INSIDE "sketchyAnimals" DIR, CREATE A NEW DIR CALLED "Snakes" 
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ mkdir Snakes                                                                                                                                                                                                         
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ ls                                                                                                                                                                                                                   
+BrownRecluse.html  BulletAnt.js  Snakes   
+5 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ mkdir animals/sketchyAnimals/Snakes
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals/sketchyAnimals/
+BrownRecluse.html  BulletAnt.js  Snakes
+
+6 //INSIDE "Snakes" DIR, CREATE THE FOLLOWING  FILES: "Cobra.css", "RecticulatedPython.py"
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ cd Snakes/                                                                                                                                                                                                           
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals/Snakes $ touch Cobra.css RecticulatedPython.py
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals/Snakes $ ls
+Cobra.css  RecticulatedPython.py
+6 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ touch animals/sketchyAnimals/Snakes/Cobra.css animals/sketchyAnimals/Snakes/RecticulatedPython.py
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals/sketchyAnimals/Snakes/
+Cobra.css  RecticulatedPython.py
+
+7 //YOU HAVE A CHANGE OF HEART AND DECIDE THAT BULLET ANTS ARE NO LONGER SKETCHY. REMOVE THE "BulletAnt.js" FILE
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals/Snakes $ cd ..
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ rm BulletAnt.js
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ ls
+BrownRecluse.html  Snakes
+7 //BONUS
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ rm animals/sketchyAnimals/BulletAnt.js
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ ls animals/sketchyAnimals/
+BrownRecluse.html  Snakes
+
+8 //DELETE THE ENTIRE ANIMALS DIR
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine/animals/sketchyAnimals $ cd ../..
+ec2-user:~/environment/BootCampCourse/IntroToCMDLine $ rm -rf animals/
+8 //BONUS
+ec2-user:~/environment/BootCampCourse/devHub/IntroToCMDLine $ rm -rf animals
+ec2-user:~/environment/BootCampCourse/devHub/IntroToCMDLine $ ls
+CMDLineExercise.txt  hello.html  message.txt

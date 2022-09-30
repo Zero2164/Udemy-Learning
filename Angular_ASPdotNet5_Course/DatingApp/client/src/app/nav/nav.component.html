@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" [class]="shdw">
+    <div class="container">
+        <a class="navbar-brand" (click)="navAway()" routerLink="/" routerLinkActive='active'><strong> <h4>ACOFFEE</h4> </strong></a>
+        <button type="button" class="navbar-toggler btn btn-primary" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseBasic" (click)="navClick()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="false">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/errors" routerLinkActive='active'>Errors</a>
+                </li>
+                <ng-container *ngIf="accountService.currentUser$ | async">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navAway()" routerLink="/members" routerLinkActive='active'>Matches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navAway()" routerLink="/lists" routerLinkActive='active'>Lists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navAway()" routerLink="/messages" routerLinkActive='active'>Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown-divider"></div>
+                    </li>
+                    <div class="container p-5 d-lg-none">
+                        <ng-container *ngIf="(accountService.currentUser$ | async) as user">
+                            <div class="row d-flex justify-content-center align-items-center ">
+                                <img src="{{ user.photoUrl }}" alt="{{ user.username }}" class="mx-2 imgStyle">
+                                <h4 class="text-light mx-2 d-inline"> {{ user.username | titlecase }}</h4>
+                            </div>
+                            <li class="nav-item">
+                                <a (click)="navAway()" routerLink="/member/edit" class="nav-link">Edit Profile</a>
+                            </li>
+                        </ng-container>
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="navAway()" (click)="logout()">Logout</a>
+                        </li>
+                    </div>
+                </ng-container>
+            </ul>
+            <div class="container col-lg-auto justify-content-center mr-lg-5">
+                <div class="row">
+                    <div class="ml-lg-auto d-none d-lg-block" dropdown placement="bottom right"
+                        *ngIf="(accountService.currentUser$ | async) as user">
+                        <button id="button-alignment" class="btn btn-none drpDownTog p-0" type="button" dropdownToggle
+                            aria-controls="dropdown-alignn">
+                            <img src="{{ user.photoUrl }}" alt="{{ user.username }}" class="mr-2 imgStyle">
+                            <span class="ml-1 mr-4 usr">{{ user.username | titlecase }}</span>
+                        </button>
+                        <ul id="dropdown-alignn" *dropdownMenu class="dropdown-menu dropdown-menu-right mt-2 mt-lg-2 bottomBox"
+                            role="menu" aria-labelledby="button-alignment">
+                            <li role="menuitem"><a *ngIf="(accountService.currentUser$ | async) as user" (click)="navAway()" routerLink="/member/edit" class="dropdown-item font-weight-bold">Edit Profile</a></li>
+                            <div class="dropdown-divider"></div>
+                            <li role="menuitem"><a class="dropdown-item font-weight-bold" (click)="navAway()" (click)="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <button class="btn btn-outline-light m-auto ml-lg-auto"
+                        *ngIf="!(accountService.currentUser$ | async) && !logBtnClicked" (click)="navAway()" routerLink="/login-or-register">
+                        Login or Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

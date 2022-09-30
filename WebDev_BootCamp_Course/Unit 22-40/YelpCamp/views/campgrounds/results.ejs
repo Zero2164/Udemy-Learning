@@ -1,0 +1,87 @@
+<%- include("../partials/headerbody") %>
+<div class="header">
+	<div id="bgArea"></div>
+	<div class="container mt-5 col-12 pb-0 mb-0">
+		<header class="jumbotron bodyPage mb-0">
+			<div class="container text-center">
+				<h4 class="pageHeader border-bottom-transparent text-center">
+					Search Results:
+				</h4>
+			</div>
+		</header>
+	</div>
+</div>
+<section class="btnbg">
+	<div class="container pageContent col-12">
+		<div class="container scrollBox">
+			<div class="row text-center">
+				<% cmpGrounds.forEach(function(campground){ %>
+				<div class="cmpBckgrnd pb-5 mb-3 col-sm-6">
+					<div class="thumbnail">
+						<a class="linkTag" href="/campgrounds/<%= campground._id %>">
+							<img class="cmpImg" src="<%= campground.img %>">
+							<div class="caption">
+								<h4>
+									<%= campground.name %>
+								</h4>
+							</div>
+						</a>
+					</div>
+				</div>
+				<% });%>
+			</div>
+		</div>
+		<% if(noMatch !== null) { %>
+		<div class="container col-12 text-center text-white">
+			<h3 class="text-white"><%= noMatch %></h3>
+			<div class="d-flex justify-content-center align-items-center m-2">
+				<div id="navSrch" class="text-center pb-0">
+					<form class="srch-box" action="/campgrounds/campground/Srch" method="GET" autocomplete="off">
+						<span id="navSrchBtn bg-dark" class="srch-butn m-auto ml-md-0">
+							<i class="fas fa-search"></i>
+						</span>
+						<input id="navSrchInput" class="srch-txt" type="text" name="search" value=""
+							placeholder="Campground Search..." required>
+					</form>
+				</div>
+			</div>
+		</div>
+		<%	} %>
+		<div class="container mt-0 pt-0">
+			<% if(!currentUser) { %>
+			<div class="container col-12 mt-0 pt-0">
+				<div class="footerText text-white m-auto text-center pb-5 mb-3 mt-0 pt-0">
+					<hr class="bg-light">
+					<p class="d-inline pr-2">Login/Sign Up to Add a Campground</p>
+					<div class="btn-group">
+						<a href="/login" class="btn btn-md btn-success"><span>Login</span></a>
+						<a href="/register" class="btn btn-md btn-outline-primary"><span>Sign Up</span></a>
+					</div>
+				</div>
+			</div>
+			<% } else { %>
+			<div class="container col-12 mt-0 pt-0">
+				<div class="footerText text-white m-auto text-center pb-5 mb-3 mt-0 pt-0">
+					<hr class="bg-light">
+					<a class="nav-link btn btn-md btn-success" href="/campgrounds/new">Add New Campground</a>
+				</div>
+			</div>
+			<%  }%>
+		</div>
+	</div>
+	<button id="myBtn"><i class="fas fa-chevron-up"></i></button>
+</section>
+
+<script type="text/javascript">
+
+	function headerTransition() {
+		var headerBg = document.getElementById('bgArea');
+		window.addEventListener('scroll', function () {
+			headerBg.style.opacity = 1 - +window.pageYOffset / 350 + '';
+		});
+	};
+	headerTransition();
+
+</script>
+
+<%- include("../partials/footer") %>

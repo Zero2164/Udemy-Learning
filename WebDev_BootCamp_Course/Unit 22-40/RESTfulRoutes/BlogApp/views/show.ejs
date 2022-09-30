@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+<div class="ui main text container threed">
+    <div class="ui top attached segment inverted">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>">
+            <div class="ui huge header inverted"><%= blog.title %></div>
+            <div class="content">
+                <span><%= blog.created.toDateString() %></span>
+            </div>
+            <div class="descriptiom">
+                <p><%- blog.body %></p>
+            </div>
+        </div>
+        <br>
+        <div class="item">
+            <a class="ui animated basic grey large button inverted" tabindex="0" href="/blogs">
+                <div class="visible content"><span>Back</span></div>
+                <div class="hidden content">
+                    <i class="sizin arrow left icon"></i>
+                </div>
+            </a>
+            <a class="ui animated vertical basic teal large button inverted" tabindex="0" href="/blogs/<%= blog._id %>/edit">
+                <div class="visible content"><span>Edit</span></div>
+                <div class="hidden content">
+                    <i class="sizin edit icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<%- include("partials/footer") %>

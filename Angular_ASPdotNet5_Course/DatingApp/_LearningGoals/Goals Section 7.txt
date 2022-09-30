@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+Learning Goals 7: 
+Implement global error handling in both the API and the Angular
+application. Also to have an understanding of:
+---------------------------------------------------------------
+Objectives:
+1. API Middleware
+2. Angular Interceptors
+3. Troubleshooting exceptions

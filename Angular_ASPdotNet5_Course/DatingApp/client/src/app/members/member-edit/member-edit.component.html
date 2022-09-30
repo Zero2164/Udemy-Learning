@@ -1,0 +1,103 @@
+<ng-container *ngIf="member">
+    <div class="col-12 bg-primary pt-5 mt-5">
+        <div class="container pageView4">
+            <div class="row justify-content-center align-items-center">
+                <h1 class="text-center pb-2 m-3 col-12 col-lg-auto">Your Profile</h1>
+                <div class="btn-group ml-auto col-12 col-lg-auto">
+                    <button class="btn btn-success btn-lg mr-lg-5" type="submit" (click)="updateMember()"
+                        [disabled]="!editForm.dirty">
+                        Save Changes <fa-icon [icon]="faSave"></fa-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center pb-4 mb-5 fixed-bottom">
+                <div class="alert alert-warning mb-5 col-lg-6 btmShadow" *ngIf="editForm.dirty">
+                    You have unsaved changes.
+                    <br>
+                    Any unsaved changes will be lost.
+                </div>
+            </div>
+            <h1 class="pt-5 pt-md-1"> {{ member.knownAs }} </h1>
+            <img src="{{ member.photoUrl || './assets/images/user.png' }}"
+                class="rounded-circle col-8 col-lg-4 mt-1 mb-2 btmShadow p-2" alt=" {{ member.knownAs }} ">
+            <div class="column p-3 text-center col-12">
+                <p class="card-text">
+                    Last active: {{ member.lastActive | timeago }}
+                </p>
+            </div>
+            <div class="card-body row justify-content-center">
+                <div class="column p-3 text-center col-12 col-lg-2">
+                    <h4>Age</h4>
+                    <h2 class="card-text">
+                        {{ member.age }}
+                    </h2>
+                </div>
+                <div class="border-right bg-white d-none d-lg-block"></div>
+                <div class="border-bottom bg-white d-block d-lg-none col-12 m-2"></div>
+                <div class="column p-3 text-center col-12 col-lg-2">
+                    <h4>Gender</h4>
+                    <h2 class="card-text">
+                        <fa-icon *ngIf="member.gender == female" [icon]="faVenus"></fa-icon>
+                        <fa-icon *ngIf="member.gender == male" [icon]="faMars"></fa-icon>
+                    </h2>
+                </div>
+                <div class="border-bottom bg-white d-block d-lg-none col-12 m-2"></div>
+                <div class="column p-3 text-center col-12 mb-2">
+                    <h3 class="card-title d-inline">
+                        <fa-icon [icon]="faGlobeAmericas"></fa-icon>
+                    </h3>
+                    <h5 class="card-text pt-2">
+                        {{ member.country }}, {{ member.city }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 bg-white pageView3 text-dark">
+        <tabset class="member-tabset" [justified]="true">
+            <tab heading='Edit About'>
+                <div class="container pageView5 pb-5 pb-xl-0">
+                    <div>
+                        <form #editForm="ngForm" (ngSubmit)="updateMember()" id="editForm">
+                            <div class="col-12">
+                                <h4 class="pt-4">Description</h4>
+                                <textarea [(ngModel)]="member.introduction" name="introduction" rows="6"
+                                    class="col-12 border-secondary textArr form-control"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="pt-4">Looking for</h4>
+                                <textarea [(ngModel)]="member.lookingFor" name="lookingFor" rows="6"
+                                    class="col-12 border-secondary textArr form-control"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="pt-4">Interests</h4>
+                                <textarea [(ngModel)]="member.interests" name="interests" rows="6"
+                                    class="col-12 border-secondary textArr form-control"></textarea>
+                            </div>
+                            <div class="col-12 d-flex flex-column justify-content-center mb-5 mb-md-auto">
+                                <h4 class="pt-4">Location Details:</h4>
+                                <div class="form-inline border border-secondary rounded p-4 justify-content-center">
+                                    <div class="col-12 col-lg-6 row mx-2">
+                                        <label for="city" class="p-2"> <strong> City: </strong> </label>
+                                        <input [(ngModel)]="member.city" type="text" name="city"
+                                            class="form-control mx-2 col-12 ">
+                                    </div>
+                                    <div class="col-12 col-lg-6 row">
+                                        <label for="city" class="p-2"> <strong> Country: </strong></label>
+                                        <input [(ngModel)]="member.country" type="text" name="country"
+                                            class="form-control mx-2 col-12">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </tab>
+            <tab heading='Edit Photos'>
+                <app-photo-editor [member]="member"></app-photo-editor>
+            </tab>
+        </tabset>
+    </div>
+</ng-container>

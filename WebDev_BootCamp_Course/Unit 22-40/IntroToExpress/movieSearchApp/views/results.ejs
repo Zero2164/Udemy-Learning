@@ -1,0 +1,51 @@
+<%- include("partials/header") %>
+<h1>Search for a Movie!</h1>
+<div class='srchContain'>
+  <div id="navSrch" class="srch-box">
+    <span id="navSrchBtn" class="srch-butn">
+      <i class="fas fa-search"></i>
+    </span>
+    <form action="/results" method='GET' autocomplete="off">
+      <input id="navSrchInput" class="srch-txt" type="text" name='srch' placeholder="Search for Movie... ( ﾉ ﾟｰﾟ)ﾉ">
+    </form>
+  </div>
+</div>
+<div class='contain'>
+  <div class='content'>
+    <% MDBdata.forEach(function(movie) { %>
+    <div class='block'>
+      <img src='<%= movie.Poster %>'>
+      <span>
+        <strong>
+          <a href='https://www.omdbapi.com/?t=<%= movie.Title %>&plot=full&apikey=thewdb'><%= movie.Title %><br> -
+            <%= movie.Year %></a>
+        </strong>
+      </span>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+<script>
+  var navSrchInput = document.getElementById("navSrchInput");
+  var navSrchBtun = document.getElementById("navSrchBtn");
+  var navSrchBox = document.getElementsByClassName("srch-box")[0];
+  function ATNavSearchButton() {
+    navSrchBtun.addEventListener("mouseover", function () {
+      //Event to create expanded search-box elusion
+      //UnHide the search-box on mouse-over of the HTML Element, then return false
+      navSrchInput.hidden = false;
+      return false;
+    });
+
+    navSrchBox.addEventListener("mouseleave", function () {
+      //Event to create collapsed search-box elusion
+      //Hide the search-box on mouse-leave of the HTML Element, then return false
+      navSrchInput.hidden = true;
+      return false;
+    });
+  };
+  ATNavSearchButton();
+</script>
+
+<%- include("partials/footer") %>

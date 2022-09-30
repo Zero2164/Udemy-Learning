@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  text-align: center;
+  background-color: rgb(40, 45, 48);
+  color: white;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+textarea {
+  -moz-user-select: text;
+}
+
+html {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, .pageView5::-webkit-scrollbar, .pageView6::-webkit-scrollbar, .scrllBox::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+
+.bgAcoffee {
+  background-image: url("https://images.unsplash.com/photo-1532258391479-cdd295f31117?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ACOFFEE {
+  width: 35rem;
+  height: 35rem;
+  border-radius: 50%;
+}
+
+
+.kyDateApp {
+  margin-top: 10rem;
+}
+
+.alert {
+  position: absolute;
+}
+
+.pageView {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pageView2 {
+  height: 120vh;
+  overflow: hidden;
+}
+
+.pageView3 {
+  height: 90vh;
+  overflow: hidden;
+}
+
+.pageView4 {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pageView5 {
+  height: 80vh;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.pageView6 {
+  height: 100vh;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+div>textarea.textArr {
+  max-height: 20rem;
+  min-height: 8rem;
+  height: 8rem;
+}
+
+.btmShadow {
+  -moz-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+}
+
+
+.topBox {
+  -moz-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+}
+
+.bottomBox {
+  -moz-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+}
+
+/* Animated Buttons */
+
+.card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: 0.7;
+}
+
+.card img {
+  transform: scale(1.0, 1.0);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover .member-icons{
+  bottom: 0;
+  opacity: 1;
+}
+
+.member-icons {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* TAB CSS */
+
+.tab-panel {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.nav-tabs>li.open, .member-tabset>.nav-tabs>li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+
+.member-tabset>.nav-tabs>li.open>a, .member-tabset>.nav-tabs>li:hover>a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.open>a>i, .member-tabset>.nav-tabs>li:hover>a>i {
+  color: #a6a6a6;
+}
+
+.member-tabset>.nav-tabs>li.open .dropdown-menu, .member-tabset>.nav-tabs>li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+
+.member-tabset>.nav-tabs>li.active {
+  border-bottom: 4px solid #E95420;
+  position: relative;
+}
+
+.member-tabset>.nav-tabs>li.active>a {
+  border: 0 !important;
+  color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.active>a>i {
+  color: #404040;
+}
+
+.member-tabset>.tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+
+
+@media only screen and (min-width: 2000px) {
+  .pageView4 {
+      height: 100%;
+  }
+}
+
+@media only screen and (min-height: 860px) {
+  .pageView4 {
+      height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 991px) and (max-height: 1080px) {
+  .pageView4 {
+      height: 100%;
+  }
+}
+
+@media only screen and (max-width: 2000px) and (max-height: 859px) {
+  .pageView4 {
+      height: 100%;
+  }
+}

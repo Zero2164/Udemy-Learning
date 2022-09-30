@@ -1,0 +1,90 @@
+body {
+    background-color: #2d2d2e;
+
+
+}
+
+div.jumbotron {
+    background-color: rgb(67, 92, 112);
+    margin-top: 10%;
+    color: white;
+    font-family: 'Share Tech';
+}
+
+.dark {
+    background-color: #2d2d2e;
+}
+
+.light {
+    color: white;
+}
+
+.lightnav {
+    color: white;
+    font-weight: 400;
+    margin-left: 0.5%;
+    margin-right: 0.2%;
+}
+
+hr.my-4 {
+    background-color: white;
+}
+
+/* Classes */
+div.dropdown-menu {
+    background-color: #2d2d2e;
+    border: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-toggle {
+    margin-bottom: 0;
+}
+
+a.dropdown-item {
+    color: white;
+    text-align: left;
+    padding-left: 6%;
+    width: max-content;
+    background-color: #2d2d2e;
+    border: transparent;
+}
+
+a.dropdown-item:hover {
+    color: rgb(89, 203, 255);
+    background-color: transparent;
+    border: transparent;
+}
+/* Classes */
+
+/* Navbar Class */
+#mainnav {
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: 'Share Tech';
+}
+
+#mainnav .nav-link {
+    color: white;
+
+}
+
+#mainnav .nav-link:hover {
+    color: rgb(89, 203, 255);
+
+}
+
+#mainnav .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(89, 203, 255);
+
+}
+
+
+/* Javascript Nav Class */
+.navbar.scrolled {
+    background-color: #2d2d2e80;
+    
+}

@@ -1,0 +1,64 @@
+#NPM EXERCISE 1
+
+1 //Create a new directory named "MyShop"
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1 $ mkdir MyShop
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1 $ ls
+MyShop  NPMExercise1.txt
+
+
+2 //Add a file named "listProducts.js"
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1 $ cd MyShop/
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1/MyShop $ touch listProducts.js
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1/MyShop $ ls
+listProducts.js
+
+
+3 //Install the "faker" npm package
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1 $ npm install faker
+npm WARN saveError ENOENT: no such file or directory, open '/home/ec2-user/package.json'
+npm WARN enoent ENOENT: no such file or directory, open '/home/ec2-user/package.json'
+npm WARN ec2-user No description
+npm WARN ec2-user No repository field.
+npm WARN ec2-user No README data
+npm WARN ec2-user No license field.
++ faker@4.1.0
+added 1 package from 1 contributor and audited 36 packages in 1.31s
+found 0 vulnerabilities
+
+
+4 //Read the faker docs and figure out how it works
+Done - I Can Read
+
+
+5 //Use faker to print out 10 random product names and prices
+6 //BE RESOURCEFUL! DON'T CHEAT AND FAST FORWARD!!
+function randomFakeProductsNPrices () {
+    //call faker package
+var faker = require('faker');
+var cat = require('cat-me');
+
+console.log(cat());
+console.log("===================");
+console.log("WELCOME TO MY SHOP!");
+console.log("===================");
+//create for loop to generate 10 different products/prices
+for(var i = 0; i < 10; i++) {
+    //print in the console 10 different products with prices
+    console.log(faker.commerce.product() + " - $" + faker.commerce.price());
+}
+
+}
+randomFakeProductsNPrices ();
+
+7 //Run your file with node and make sure it works!
+ec2-user:~/environment/BootCampCourse/IntroToNPM/NPMExercise1/MyShop $ node listProducts.js 
+Mouse = 443.00
+Chair = 651.00
+Chips = 941.00
+Shoes = 611.00
+Computer = 907.00
+Mouse = 699.00
+Salad = 52.00
+Keyboard = 498.00
+Towels = 594.00
+Car = 211.00

@@ -1,0 +1,83 @@
+body {
+    background-color: #2d2d2e;
+    font-family: Arial;
+
+}
+
+
+
+/* Navbar Class */
+#mainnav {
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+#mainnav .nav-link {
+    color: white;
+
+}
+
+#mainnav .nav-link:hover {
+    color: rgb(89, 203, 255);
+
+}
+
+#mainnav .navbar-brand {
+    color: rgb(89, 203, 255);
+
+}
+
+
+
+/* Heading Class */
+#heading-grp span {
+    color: rgb(89, 203, 255);
+}
+
+#heading-grp h1 {
+    font-weight: 100;
+    font-size: 4rem;
+
+}
+
+
+
+
+/* Content Class */
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* Blurb Class */
+.blurb h2 {
+    color: rgb(89, 203, 255);
+    font-weight: 100;
+    font-size: 2.5rem;
+
+
+}
+
+.blurb p {
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+    
+}
+
+/* Javascript Class */
+.navbar.scrolled {
+    background-color: #2d2d2e80;
+    
+}
+
+/* "Media Query" dynamically changes html/css elements based on the "Query()" */
+@media (max-width: 1200px) {
+
+    #heading-grp h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    
+    }
+}
+

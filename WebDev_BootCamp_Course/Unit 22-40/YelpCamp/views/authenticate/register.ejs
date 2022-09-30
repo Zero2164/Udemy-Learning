@@ -1,0 +1,38 @@
+<%- include("../partials/headerAuth") %>
+<div class="btnbg4 mt-5 pt-5 mb-5 pb-5">
+    <div class="container pageContent text-center mb-5 mt-5 pb-5 col-11 col-md-4 col-lg-4 col-xl-4">
+        <h1>YelpCamp</h1>
+        <div class="row">
+            <div class="formArea2 col-12">
+                <form action="/register" method="POST" class="text-white text-left">
+                    <div class="form-group">
+                        <label for="uname">New Username</label>
+                        <input id="uname" class="form-control" type="text" name="username" placeholder="Create a Username"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="upword">New Password</label>
+                        <input id="upword" class="form-control" type="password" name="password" placeholder="Create a Password"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-md btn-primary btn-block">Sign Up</button>
+                    </div>
+                </form>
+                <hr class="bg-light"><p class="text-white">OR</p><hr class="bg-light">
+                <a href="/login" class="btn btn-md btn-success btn-block"><span>Login</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="container text-white col-12 text-center m-auto pb-5 pt-3">
+        <p class="bg-transparent">Trademark @copyright2020 Kyle-YelpCamp</p>        
+    </div>
+</div>
+<ul class="slideshow">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<%- include("../partials/footerPlain") %>

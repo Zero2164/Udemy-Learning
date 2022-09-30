@@ -1,0 +1,41 @@
+<!-- Exercise 1 Rules -->
+<!-- 1. Correctly Include jQuery file -->
+<!-- 2. Select all divs and give them a purple background -->
+<!-- 3. Select the divs with the class "highlight" and make them 200px -->
+<!-- 4. Select the div  with the id "third" and give it a orange border -->
+<!-- 5. Bonus: Select the first div only and change its font color to pink -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Exercise 1</title>
+</head>
+<body>
+
+    <div>Div 1</div>
+    <div class="highlight">Div 2</div>
+    <div id="third">Div 3</div>
+    <div class="highlight">Div 4</div>
+
+
+    <!-- 1. Included jQuery Document: -->
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <script>
+        //2. Selected all divs, and gave purple background color:
+        $('div').css('background-color', '#a836ff');
+
+        //3. Selected the divs with the class "highlight" and made them 200px:
+        $('.highlight').css('font-size', '200px');
+
+        //4. Selected the div with the id "third" and forced it to have an orange border
+        $('#third').css('border', '4px solid #ff7003');
+
+        //5. Selected the first div with a piece of code from the interwebs and gave the dam-thing a ping font color
+        $('div').first().css('color', 'pink');
+    </script>
+</body>
+</html>

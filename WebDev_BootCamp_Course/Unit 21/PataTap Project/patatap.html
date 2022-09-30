@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patatap App</title>
+    <link rel="icon" href="assets/images/devHub.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/lib/paper-full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+    var stars = [];
+    var keyData = {
+        a: {
+            color: 'purple',
+            sound: new Howl({
+                 src: ['assets/sounds/G/confetti.mp3']
+             })
+        },
+        b: {
+            color: 'yellow',
+            sound: new Howl({
+            src: ['assets/sounds/G/zig-zag.mp3']
+             })
+        },
+        c: {
+            color: 'red',
+            sound: new Howl({
+            src: ['assets/sounds/G/strike.mp3']
+             })
+        }
+    }
+
+    function onKeyDown(event) {
+            if(keyData[event.key]) {
+            keyData[event.key].sound.play();
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var scrPoint = maxPoint * randomPoint;
+            var rectangle = new Path.Rectangle(scrPoint, 500);
+            rectangle.fillColor = keyData[event.key].color;
+            stars.push(rectangle);
+            };
+
+    };
+            function onFrame(event) {
+                for(var i = 0; i < stars.length; i++) {
+                    stars[i].fillColor.hue += 5;
+                    stars[i].scale(.91);
+                    stars[i].rotate(5);
+                };
+
+            };
+    
+    </script>
+</head>
+
+<body class="dark">
+    <canvas id="myCanvas" resize></canvas>
+</body>
+
+</html>

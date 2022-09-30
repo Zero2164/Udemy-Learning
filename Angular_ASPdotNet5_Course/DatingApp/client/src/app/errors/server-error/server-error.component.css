@@ -1,0 +1,9 @@
+div.topBox {
+    -moz-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.37);
+}
+
+div.textSizUp {
+    font-size: 1.5rem;
+}

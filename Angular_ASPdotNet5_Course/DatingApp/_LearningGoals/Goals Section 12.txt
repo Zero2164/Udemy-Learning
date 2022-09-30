@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+Learning Goals 12: 
+Implement more advanced forms using Reactive Forms in Angular
+and understand how to:
+---------------------------------------------------------------
+Objectives:
+1. Use Reactive Forms
+2. Use Angular Validation for Inputs
+3. Implement custom validators
+4. Implement reusable form controls
+5. Working with Date inputs
+

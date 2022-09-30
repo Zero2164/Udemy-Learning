@@ -1,0 +1,12 @@
+div.footr {
+    background-color: rgb(40, 45, 48);
+    
+}
+
+.footertext {
+    color: rgb(96, 104, 109);
+}
+
+a.footertext:hover {
+    color: rgb(188, 189, 190);
+}

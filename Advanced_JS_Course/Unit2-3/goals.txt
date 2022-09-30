@@ -1,0 +1,7 @@
+GOALS for Unit2:
+
+- Work with primitive types
+- Understand let & const 
+- Use String Template Literals
+- Work with common operators/methods
+

@@ -1,0 +1,36 @@
+<div class="kyDateApp">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" *ngIf="!switchFrm">
+                <h2 class="text-center text-primary">Login</h2>
+                <hr class="bg-light">
+                <div class="form-group">
+                    <input name="username" [(ngModel)]="model.username" [(ngModel)]="_textValue"
+                        (ngModelChange)="ConvertToLower($event)" class="form-control mb-2 lowerCse" type="text"
+                        placeholder="Username" autocomplete="off" autofocus>
+                </div>
+                <div class="form-group">
+                    <input name="password" [(ngModel)]="model.password" class="form-control mb-2" type="password"
+                        placeholder="Password" autocomplete="off">
+                </div>
+                <button class="btn btn-primary btn-lg mr-2" type="submit">Login</button>
+            </form>
+            <app-register *ngIf="switchFrm"></app-register>
+            <div class="container mt-4">
+                <div class="column justify-content-center p-3">
+                    <hr class="bg-light">
+                    <h4 class="p-2">OR</h4>
+                    <button *ngIf="!switchFrm" class="btn btn-outline-primary btn-lg" type="button"
+                        (click)="registrClicked()">REGISTER</button>
+                    <button *ngIf="switchFrm" class="btn btn-outline-primary btn-lg" type="button"
+                        (click)="registrClicked()">LOGIN</button>
+                </div>
+                <div class="m-3">
+                    <button class="btn btn-outline-secondary btn-lg m-5 rounded-circle" type="button" routerLink="/">
+                        <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

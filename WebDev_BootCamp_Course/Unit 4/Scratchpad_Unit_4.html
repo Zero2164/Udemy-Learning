@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scratch Pad
+    </title>
+</head>
+<body style="color: cornsilk; background-color: rgb(31, 31, 32);">
+
+<!-- =================================================== -->
+<!-- form tag - container for form functions -->
+<h1>Login</h1>
+
+<!-- Action - Where the form sends data to  -->
+<!-- Method - what HTTP method (get/post) -->
+<form action="https://wikipedia.org" method="GET">
+   <!-- label tag - labelling form functions -->
+   <label>
+    Username:
+    <!-- Input tag - for creating form function --> 
+                   <!-- Type - rule for form function -->
+                   <!-- Name - info added to query string by function -->
+                   <!-- Placeholder - Names text fields-->
+                   <!-- Required - Creates rule forcing input --> <!-- Simple Validations for HTML Forms -->
+    <input name="Username"type="text" placeholder="Username" required> 
+   </label> 
+<!-- Label Correct Syntax - For Disability software to read correctly -->
+   <label for="passwrd">Password:</label>
+    <input id="passwrd"  size="10" minlength="5" maxlength="10" name="password" type="password" placeholder="Password" required >
+
+   <!-- Value - name of submit function -->
+   <br />
+   <br />
+    <input type="Submit" value="Go!">
+</form>   
+
+<!-- ====================================================== -->
+
+
+
+

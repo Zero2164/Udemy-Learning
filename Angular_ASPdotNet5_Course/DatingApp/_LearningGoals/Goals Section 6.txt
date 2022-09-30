@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+Learning Goals 6: 
+Implement routing in our Angular app and have an understanding of:
+---------------------------------------------------------------
+Objectives:
+1. Angular routing
+2. Adding a Bootstrap theme
+3. Using Angular route guards
+4. Using a Shared Module

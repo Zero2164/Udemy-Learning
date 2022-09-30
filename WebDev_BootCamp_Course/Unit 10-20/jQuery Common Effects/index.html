@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Common Effects</title>
+    <style>
+        body {
+            background-color: rgb(147, 165, 173);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .boxes {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            float: left;
+            margin: 20px;
+            text-align: center;
+            padding: 1%;
+            border-radius: 25%;
+        }
+
+        .circles {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(61, 211, 211);
+            float: left;
+            margin: 20px;
+            text-align: center;
+            padding: 2.5%;
+            border-radius: 50%;
+        }
+
+        .boxContain {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        button {
+            border-radius: 25%;
+            width: 100px;
+            height: 100px;
+            padding: 2%;
+            margin: 20px;
+            float: left;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Common Effects Demo Page</h1>
+
+    <div class="boxContain">
+        <button class="FadeOut">FADE OUT</button>
+        <button class="FadeToggle">TOGGLE FADE EFFECT</button>
+        <button class="FadeIn">FADE <br> IN</button>
+    </div>
+    <br>
+    <div class="boxContain">
+        <button class="SlideUp">SLIDE <br> UP</button>
+        <button class="SlideToggle">TOGGLE SLIDE EFFECT</button>
+        <button class="SlideDown">SLIDE DOWN</button>
+    </div>
+    <br>
+    <div class="boxContain">
+        <div class="boxes">Please Dont Fade Me</div>
+        <div class="boxes">I am beggin you, please!</div>
+        <div class="boxes">PLEASE GOD NO!</div>
+    </div>
+    <div class="boxContain">
+        <div class="circles">I am too young to be slid</div>
+        <div class="circles">Slide me one more time..</div>
+        <div class="circles">..and he will kill you!</div>
+    </div>
+
+
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <script>
+        var swtch = false;
+        var swtchtwo = false;
+
+        $('button').on('click', function () {
+            if ($(this).hasClass("FadeToggle")) {
+                if (!swtch) {
+                    $('.circles').slideUp(300, function () {
+                        console.log("Slide-Up Triggered!");
+                        swtchtwo = true;
+                    })
+                    $('.boxes').fadeToggle(1000, function () {
+                        console.log("Fade-Toggle Triggered!");
+                        swtch = true;
+                    });
+
+                } else if (swtch) {
+                    $('.boxes').fadeToggle(1000, function () {
+                        console.log("Fade-Toggle Triggered!");
+                        swtch = false;
+                        $('.circles').slideDown(1000, function () {
+                            console.log("Slide-Down Triggered!");
+                            swtchtwo = false;
+                        });
+                    });
+                };
+            } else if ($(this).hasClass("FadeOut")) {
+                if (!swtch) {
+                    $('.circles').slideUp(1000, function () {
+                        console.log("Slide-Up Triggered!");
+                        swtchtwo = true;
+                        $('.boxes').fadeOut(1000, function () {
+                            console.log("Fade-Out Triggered!");
+                            swtch = true;
+                        });
+                    });
+                } else {
+                    return false;
+                };
+            } else if ($(this).hasClass("FadeIn")) {
+                if (swtch) {
+                    $('.boxes').fadeIn(1000, function () {
+                        console.log("Fade-In Triggered!");
+                        swtch = false;
+                        $('.circles').slideDown(1000, function () {
+                            console.log("Slide-Down Triggered!");
+                            swtchtwo = false;
+                        });
+                    });
+                } else {
+                    return false;
+                };
+            } else if (!swtch) {
+                if ($(this).hasClass("SlideUp")) {
+                    if (!swtchtwo) {
+                        $('.circles').slideUp(1000, function () {
+                            console.log("Slide-Up Triggered!");
+                            swtchtwo = true;
+                        });
+                    } else {
+                        return false;
+                    };
+                } else if ($(this).hasClass("SlideDown")) {
+                    if (swtchtwo) {
+                        $('.circles').slideDown(1000, function () {
+                            console.log("Slide-Down Triggered!");
+                            swtchtwo = false;
+                        });
+                    } else {
+                        return false;
+                    };
+                } else if ($(this).hasClass("SlideToggle")) {
+                    $('.circles').slideToggle(1000, function () {
+                        console.log("Slide-Toggle Triggered!");
+                        if (swtchtwo) {
+                            swtchtwo = false;
+                        } else {
+                            swtchtwo = true;
+                        };
+                    });
+                };
+            };
+        });
+    </script>
+</body>
+
+</html>

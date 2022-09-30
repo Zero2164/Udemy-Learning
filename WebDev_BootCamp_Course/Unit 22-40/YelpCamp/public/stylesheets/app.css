@@ -1,0 +1,344 @@
+/* Navbar Elements */
+/* HTML Tags */
+div a.dropdown-item:hover, ul.nav-item li.nav-link:hover {
+	color: rgb(67, 149, 106);
+	transition: 0.2s;
+	background-color: transparent;
+}
+
+/* Classes */
+.srch-box {
+    position: relative;
+    top: 20px;
+    transform: translate(-0%, -50%);
+    background: transparent;
+	height: 50px;
+    border-radius: 40px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	transition: 0.4s;
+}
+
+.activeSearch {
+	background-color: rgb(13, 92, 75);;
+}
+
+.srch-box:hover>.srch-butn {
+    background: white;
+    color: rgb(13, 92, 75);
+    cursor: pointer;
+}
+
+.activeSearchbutn {
+    background-color: white;
+	color: rgb(13, 92, 75);
+	cursor: pointer;
+}
+
+.srch-butn {
+    color: white;
+    float: left;
+    width: 22px;
+	height: 22px;
+	padding: 1rem;
+    border-radius: 50%;
+    background: rgb(13, 92, 75);
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	align-self: start;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.srch-txt {
+	display: none;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+	padding: 0;
+    color: white;
+	font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+	width: 80%;
+	transition: 0.4s;
+}
+
+
+/* ID's */
+#mainNav {
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 0.5rem;
+}
+
+
+
+/* Body Elements */
+/* HTML Tags */
+div a.dropdown-item {
+	color: white;
+}
+
+div button.close, div button.close:focus, div button.close:active {
+	outline: none;
+}
+
+div.commentArea:hover {
+	background-color: rgba(62, 89, 114, 0.274);
+	cursor: text;
+}
+
+div.commentArea:hover>span>span.date {
+	visibility: hidden;
+}
+
+div.commentEditText {
+	display: none;
+	width: 100%;
+}
+
+div.errMsg {
+	background-color: rgba(255, 0, 0, 0.253);
+	height: 40px;
+}
+
+header.bodyPage {
+	background-color: transparent;
+}
+
+
+
+/* Classes */
+.background, .background2 {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.background li, .background2 img {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.background2 img {
+	opacity: 20%;
+	transition: 0.6s;
+}
+
+.background li {
+	background-image: url("../../bgImage.jpg")
+}
+
+div.btnbg {
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+div.btnbg2 {
+	width: 100%;
+	position: absolute;
+	z-index: 920;
+}
+
+div.btnbg4 {
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	padding-top: 30vh;
+}
+
+.cmpImg {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.cmpImg2 {
+	display: none;
+	width: 100%;
+	height: 30rem;
+	border-radius: 5px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.caption, #campname {
+	color: white;
+	text-decoration: none;
+}
+
+.cmpGrndInfo {
+	text-align: left;
+}
+
+.desc {
+	min-height: 100px;
+	max-height: 400px;
+	padding: 5px;
+	overflow-x: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #2c36577e transparent;
+}
+
+.desc::-webkit-scrollbar, body::-webkit-scrollbar {
+	width: 6px;
+}
+
+.desc::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.desc::-webkit-scrollbar-thumb {
+	background-color: #2c36577e;
+}
+
+.formArea {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.formArea2 {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.linkTag {
+	text-decoration: none;
+}
+
+.linkTag, .linkTag:hover, h1, .cmpGrndInfo, h4 {
+	color: white;
+}
+
+.logTrue {
+	display: none;
+}
+
+.pageContent {
+	padding: 1rem;
+	padding-top: 2rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+	padding-bottom: 0rem;
+	height: 100%;
+	background-color: #262b2e;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pageHeader {
+	padding-top: 10vh;
+	height: 100%;
+	border-bottom: 2px solid #0d954d;
+	font-family: sans-serif;
+	text-align: left;
+	font-size: 2.8rem;
+	text-shadow: 1px 4px 1px rgba(65, 65, 65, 0.911);
+	z-index: 30;
+}
+
+.pageHeaderSubTxt, .pageHeader {
+	color: #f8f8f8;
+	
+}
+
+.pageHeaderSubTxt {
+	font-size: 1.3rem;
+	text-shadow: 1px 2px 1px rgba(65, 65, 65, 0.911);
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.scrollBox {
+	max-height: 80vh;
+	overflow-y: auto;
+}
+.tradmrk {
+	color: #ffffff28;
+}
+
+.tradmrk {
+	text-align: center;
+}
+
+.thumbnail {
+	width: 100%;
+	height: 20rem;
+	font-weight: bold;
+	border-radius: 5px;
+	background-color: transparent;
+}
+
+.title:hover, .thumbnail:hover {
+	cursor: pointer;
+}
+
+.thumbnail:hover>a.linkTag, #campname:hover {
+	text-decoration: none;
+}
+
+.thumbnail:hover>a.linkTag>div.caption>h4, #campname:hover {
+	color: rgb(52, 187, 146);
+	transition: 0.4s;
+}
+
+
+
+/* ID's */
+#colorize {
+	background-color: rgba(255, 255, 255, 0.733);
+	color: white;
+}
+
+#mainBrand {
+	height: 100%;
+	border-right: 2px solid white;
+}
+
+#map {
+	width: 250px;
+	height: 250px;
+	overflow: auto;
+}
+
+#mapimg {
+	width: 150%;
+	height: 150%;
+}
+
+#reviewForm>div>div {
+	width: 100%;
+}
+
+#reviewForm>div {
+	height: 20rem;
+	overflow-x: auto;
+	border-radius: 5px;
+}
+
+#price {
+	font-family: 'Play';
+}
+
+
+

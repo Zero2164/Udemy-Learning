@@ -1,0 +1,6 @@
+//Goals:
+//Write for loops
+//Write while loops
+//Avoid infinite loops
+//Iterate over arrays and objects
+

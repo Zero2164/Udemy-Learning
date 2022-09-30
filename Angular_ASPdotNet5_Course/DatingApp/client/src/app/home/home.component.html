@@ -1,0 +1,52 @@
+<div class="pageView bgAcoffee">
+    <div class="container cent">
+        <div *ngIf="!registerMode && !loginMode">
+            <h1>Find your match</h1>
+            <p class="lead" *ngIf="!(accountService.currentUser$ | async)">Who will you have ACOFFEE with today? <br> Register now to find out!</p>
+            <p class="lead" *ngIf="(accountService.currentUser$ | async)">Who will you have ACOFFEE with today?</p>
+            <div class="text-center">
+                <div *ngIf="!(accountService.currentUser$ | async)" class="btn-group mr-2">
+                    <button class="btn btn-primary btn-lg" routerLink="/login-or-register">Login or
+                        Register
+                    </button>
+                </div>
+                <button *ngIf="(accountService.currentUser$ | async)" class="btn btn-primary btn-lg mr-2"
+                    routerLink="/members">Matches</button>
+                <button class="btn btn-success btn-lg" routerLink="/about">Learn more</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="pageView2 bg-white bottomBox d-none d-xl-block">
+    <div class="container text-dark centPlus">
+        <div class="row">
+            <h1 class="pt-5 m-5">Create long lasting relationships!</h1>
+            <img src="https://images.unsplash.com/photo-1531683944026-e56b930467ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                alt="img2" class="img-thumbnail rounded imgTransFrm">
+            <img src="https://images.unsplash.com/photo-1531683944026-e56b930467ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                alt="img2" class="img-thumbnail rounded imgTransFrm2">
+        </div>
+    </div>
+</div>
+<div class="pageView bg-white bottomBox d-xl-none">
+    <div class="container text-dark">
+        <div class="row justify-content-center">
+            <h1 class="pt-5 m-5">Create long lasting relationships!</h1>
+            <img src="https://images.unsplash.com/photo-1531683944026-e56b930467ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                alt="img2" class="img-thumbnail rounded imgTransFrm mt-5">
+            <img src="https://images.unsplash.com/photo-1531683944026-e56b930467ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                alt="img2" class="img-thumbnail rounded imgTransFrm2">
+        </div>
+    </div>
+</div>
+<div class="mt-5 pt-5 pb-5 mb-5">
+    <div class="container justify-content-center align-items-center">
+        <h1>Follow ACOFFEE on Social Media!</h1>
+        <ul class="flex-row justify-content-center text-center text-secondary textUpScle">
+            <li class="list-inline-item p-4"><h1><a href="https://instagram.com/"><fa-icon [icon]="faInstagram"></fa-icon></a></h1></li>
+            <li class="list-inline-item p-4"><h1><a href="https://facebook.com"><fa-icon [icon]="faFacebook"></fa-icon></a></h1></li>
+            <li class="list-inline-item p-4"><h1><a href="https://twitter.com/"><fa-icon [icon]="faTwitter"></fa-icon></a></h1></li>
+        </ul>
+    </div>
+</div>

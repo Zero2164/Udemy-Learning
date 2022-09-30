@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container threed">
+    <div class="ui top attached segment inverted">
+        <div class="ui huge header">Create New Blog</div>
+        <form class="ui form inverted" action='/blogs' method="POST">
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="blog[title]" placeholder="Title" required>
+            </div>
+            <div class="field">
+                <label>Image Link</label>
+                <input type="text" name="blog[image]" placeholder="Image">
+            </div>
+            <div class="field">
+                <label>Blog Content</label>
+                <textarea name="blog[body]" required></textarea>
+            </div>        
+            <button class="ui animated fade basic teal large button inverted" tabindex="0" type="submit">
+                <div class="visible content"><span>Post</span></div>
+                <div class="hidden content">
+                    <i class="sizin upload icon"></i>
+                </div>
+            </button>
+        </form>
+    </div>
+
+</div>
+
+
+<%- include("partials/footer") %>

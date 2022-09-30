@@ -1,0 +1,5 @@
+Logic  - Goals
+
+- Understand Comparison Operators
+- Write Conditionals
+- Work with Boolean Operators

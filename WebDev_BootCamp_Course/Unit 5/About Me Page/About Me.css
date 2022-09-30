@@ -1,0 +1,54 @@
+button {
+    border-style: outset;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0);
+    font-family: 'IBM 3270 Narrow';
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+button:active{
+    background-image: url(https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    box-shadow: 0 5px rgba(0, 0, 0, 0);
+    transform: matrix3d(2px);
+
+}
+
+button:hover{
+    border-style: dotted;
+    border-width: 3px;
+    border-color: rgb(8, 116, 31);
+    color: rgb(8, 116, 31);
+    font-family: 'IBM 3270 Narrow';
+    font-size: 24px;
+    display: inline-block;
+    transition-duration: 0.2s;
+    cursor: crosshair;
+}
+
+ul {
+    list-style-type: square;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+}
+
+body {
+    background-image: url(https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-repeat: round;
+    background-position: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+
+}
+
+div {
+    text-align: center;
+    font-family: 'IBM 3270 Narrow';
+    font-size: medium;
+}

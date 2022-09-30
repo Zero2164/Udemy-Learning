@@ -1,0 +1,11 @@
+
+ECMA Script:
+
+ES - Stands for the ECMA-Script version for the browser. ECMA-Script is a set of standards maintained annually for current browser code, and decides what is capable and supported on each browser.
+The most current version is ES8 - The 8th iteration released in 2017. 
+
+Tools required for this course: 
+VS Code or code editor. 
+Chrome or Firefox. 
+
+

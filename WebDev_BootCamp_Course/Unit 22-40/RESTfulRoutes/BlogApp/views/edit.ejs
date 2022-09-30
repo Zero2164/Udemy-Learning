@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container threed">
+    <div class="ui top attached segment inverted">
+        <div class="ui huge header">Edit "<%= blog.title %>" Post?</div>
+        <form class="ui form inverted" action='/blogs/<%= blog._id %>?_method=PUT' method="POST">
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="blog[title]" value="<%= blog.title %>">
+            </div>
+            <div class="field">
+                <label>Image Link</label>
+                <input type="text" name="blog[image]" value="<%= blog.image %>">
+                <img class="ui centered rounded image" src="<%= blog.image %>">
+            </div>
+            <div class="field">
+                <label>Blog Content</label>
+                <textarea name="blog[body]" required><%= blog.body %></textarea>
+            </div>
+            <div class="ui buttons">
+                <a class="ui animated basic grey large button inverted" tabindex="0" href="/blogs/<%= blog._id %>">
+                    <div class="visible content"><span>Back</span></div>
+                    <div class="hidden content">
+                        <i class="sizin arrow left icon"></i>
+                    </div>
+                </a>
+                <button class="ui animated fade basic teal large button inverted" tabindex="0" type="submit">
+                    <div class="visible content"><span>Save</span></div>
+                    <div class="hidden content">
+                        <i class="sizin download icon"></i>
+                    </div>
+                </button>
+                </form>
+                <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                    <button class="ui animated fade basic red large button inverted" tabindex="0" type="submit">
+                        <div class="visible content"><span>Delete</span></div>
+                        <div class="hidden content">
+                            <i class="sizin trash alternate icon"></i>
+                        </div>
+                    </button>
+                </form>
+            </div>
+    </div>
+</div>
+
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Game</title>
+
+    <!-- My CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CSS File -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts CSS File -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="light title">
+        <h1><br> The Great <br><span id="colorDisp"> RGB </span><br> Color Game!</h1>
+    </div>
+    <div id="gameStart">
+        <button class="btnStart" id="startGame">Start!</button>
+    </div>
+    <div id="RGBColorApp">
+        <div id="gameEnd">
+            <i id="endGame" class="far fa-times-circle btnEnd"></i>
+        </div>
+        <div>
+            <div id="stripe" class="dark subTitle">
+                <button id="restBtn" class="btn">New Colors !</button>
+                <button id="hrdBtn" class="btn">HARD</button>
+                <button id="mdmBtn" class="btn">BASIC</button>
+                <button id="ezBtn" class="btn">PUSSI</button>
+            </div>
+        </div>
+        <div class="mesgDiv">
+            <span id="msg"></span>
+        </div>
+        <br>
+        <div class="container">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle notMdm"></div>
+            <div class="circle notMdm"></div>
+            <div class="circle notMdm"></div>
+            <div class="circle notHrd"></div>
+            <div class="circle notHrd"></div>
+            <div class="circle notHrd"></div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

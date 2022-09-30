@@ -1,0 +1,33 @@
+<%- include("../partials/headerAuth") %>
+<div class="btnbg mt-5 pt-5 mb-5 pb-5">
+    <div class="container pageContent text-center pb-5 mb-5 mt-5 col-11 col-md-4 col-lg-4 col-xl-4">
+        <h3 class="text-white">Edit Comment?</h1>
+                <div class="formArea2 col-12">
+                    <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT"
+                        method="POST" class="text-white text-left">
+                        <div class="form-group">
+                            <label for="cdesc">Comment Description</label>
+                            <div class="input-group">
+                                <textarea id="cdesc" class="form-control" aria-label="With textarea" type="text"
+                                    name="comment[text]" autocomplete="off" size="50"
+                                    required><%= comment.text %></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block">Save</button>
+                        </div>
+                    </form>
+                    <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=DELETE"
+                        method="POST">
+                        <button class="btn btn-block btn-danger">Delete Comment</button>
+                    </form>
+                    <br>
+                    <a href="/campgrounds/<%= campground_id %>" class="btn btn-md btn-secondary btn-block"><i
+                            id="animHovIcn" class="fas fa-arrow-left pr-2"></i><span id="animHovBtun">Cancel</span></a>
+                </div>
+    </div>
+</div>
+<ul class="background">
+	<li></li>
+</ul>
+<%- include("../partials/footerPlain") %>

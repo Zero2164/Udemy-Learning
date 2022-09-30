@@ -1,0 +1,84 @@
+body.dark {
+    background-color: rgb(48, 145, 184);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    scrollbar-width: thin;
+    scrollbar-color: #2c36577e transparent;
+}
+
+textarea {
+    -moz-user-select: text;
+}
+
+div>div>i.icon {
+    font-size: 2rem;
+}
+
+div.threed {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+img.image {
+    border: 2px outset rgba(250, 250, 250, 0.76);
+}
+
+div.image {
+    height: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+div.main.container {
+    margin-top: 6rem;
+}
+
+div>a, .light, #link, #indx {
+    color: white;
+    text-decoration: none;
+}
+
+div>a:hover, #link:hover {
+    color: rgb(48, 145, 184);
+}
+
+#indx {
+    max-height: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#show {
+    max-height: 300px;
+}
+
+#show {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(48, 146, 184, 0.26) transparent;
+    border-radius: 5px;
+}
+
+div>div>i.sizin {
+    font-size: 1.3rem;
+}
+
+textarea {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(48, 146, 184, 0.26) transparent;
+}
+
+#show::-webkit-scrollbar, textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+#show::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track  {
+    background-color: transparent;
+}
+
+#show::-webkit-scrollbar-thumb textarea::-webkit-scrollbar-thumb  {
+    background-color: rgba(48, 146, 184, 0.26);
+}
+

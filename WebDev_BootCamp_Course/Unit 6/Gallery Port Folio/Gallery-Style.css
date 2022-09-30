@@ -1,0 +1,15 @@
+
+
+h1 {
+    font-family: Lemonada;
+    font-size: 10px;
+    background-color: rgba(18, 85, 105, 0.233);
+    margin: 1%;
+    width: auto;
+    padding: 5%;
+}
+img {
+    float: left;
+    width: 31%;
+    margin: 1%;
+}

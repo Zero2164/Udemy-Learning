@@ -1,0 +1,5 @@
+//Goals
+ //Work with Arrays
+ //Write Object Literals
+ //Understand Reference Types
+ //Use Common Array/Object methods 

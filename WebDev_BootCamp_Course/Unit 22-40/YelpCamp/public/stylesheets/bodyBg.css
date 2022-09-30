@@ -1,0 +1,52 @@
+/* Body Page Elements */
+/* HTML Tags */
+html {
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body.dark {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: rgb(216, 216, 216);
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+}
+
+textarea {
+	-moz-user-select: text;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 60vh;
+	overflow: hidden;
+	background-color: #262b2e;
+}
+
+.header #bgArea {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url('../bodyImg1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	transition: 0.4s;
+}
+
+div.footerText {
+	padding-top: 5vh;
+	width: 100%;
+	background-color: transparent;
+}
+
+

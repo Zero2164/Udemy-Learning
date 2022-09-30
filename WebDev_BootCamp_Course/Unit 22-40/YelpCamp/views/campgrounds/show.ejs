@@ -1,0 +1,191 @@
+<%- include("../partials/headerShow") %>
+<div class="btnbg">
+    <div class="container pageContent text-center p-0 pt-4 mt-3 pb-5 col-12">
+        <header id="headBG" class="jumbotron infoPage pr-0 mr-0 pl-0 ml-0 col-12">
+            <img id="bgArea" class="bodycmpImg" src="<%= campground.img %>">
+        </header>
+        <div class="container cmpGrndInfo">
+            <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+            <a class="float-right btn-lg mb-4" href="/campgrounds/<%= campground._id %>/edit"><i id="btun4"
+                    class="fas fa-edit" data-toggle="tooltip" data-placement="bottom" title="Edit Campground?"></i></a>
+            <%  }%>
+            <div class="container">
+                <h1><a id="campname" href="#"><%= campground.name %></a></h1>
+                <div class="caption d-flex flex-column">
+                    <p class="col-12"><%= campground.description %></p>
+                    <p class="col-12"><em>Submitted By: <%= campground.author.username %></em></p>
+                </div>
+                <hr class="bg-light d-block d-md-none">
+                <h4 id="price" class="float-md-right pl-md-3 text-center"><strong>$<%= campground.price %>
+                        p/night</strong></h4>
+                <hr class="bg-light">
+            </div>
+            <div class="container d-flex flex-md-row flex-column">
+                <div class="row col-md-6 m-2">
+                    <div class="col-12">
+                        <p class="lead">YelpCamp</p>
+                        <div class="list-group text-dark">
+                            <a href="#" class="list-group-item list-group-item-action active">Info 1</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Info 2</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Info 3</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-md-6 m-2">
+                    <div id="map" class="col-12 border border-light"></div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div>
+                <% if(!currentUser) { %>
+                <div class="card bg-dark text-center">
+                    <div class="card-body">
+                        <p class="d-inline pr-2">Login/Sign Up to leave a review</p>
+                        <div class="btn-group">
+                            <a href="/login" class="btn btn-md btn-success"><span>Login</span></a>
+                            <a href="/register" class="btn btn-md btn-outline-primary text-white"><span>Sign
+                                    Up</span></a>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                <button id="revBtun" class="btn btn-md btn-block btn-light m-auto col-md-12"><span
+                        id="animHovBtun">Leave
+                        a Review</span><i id="animHovIcn" class="fas fa-chevron-down"></i></button>
+                <div id="formgruBtun" class="formArea">
+                    <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                        <div class="form-group">
+                            <div class="input-group flex-nowrap">
+                                <textarea id="textBtun" class="form-control desc bg-dark text-white"
+                                    aria-label="With textarea" type="text" name="comment[text]"
+                                    placeholder="Leave a review!" autocomplete="off" size="50" required></textarea>
+                            </div>
+                            <div id="postBtun" class="border border-dark">
+                                <button class="btn btn-sm btn-primary btn-block">Post</button>
+                            </div>
+                            <div class="text-center">
+                                <div class="btn btn-lg btn-light border-0 bg-transparent text-white m-auto">
+                                    <i class="fas fa-chevron-up" id="awayBtun"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <%  }%>
+
+                <div class="card mt-1">
+                    <div class="card-body bg-dark">
+                        <% campground.comments.forEach(function (comment) { %>
+                        <div class="row">
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                            <div class="col-md-12 commentArea">
+                                <div class="btn-group editBtunGrp">
+                                    <a class="btn editBtun"
+                                        href="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>/edit"
+                                        data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                        <i class="fas fa-pencil-alt"></i></a>
+                                    <form
+                                        action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=DELETE"
+                                        method="POST" class="d-inline">
+                                        <button class="btn deletBtn" data-toggle="tooltip" data-placement="bottom"
+                                            title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </div>
+                                <% } else { %>
+                                <div class="col-md-12">
+                                    <% } %>
+                                    <p class="mb-0">
+                                        <strong><i
+                                                class="fas fa-user-circle pt-2 pr-1"></i><%= comment.author.username %></strong>
+                                        <br>
+                                        <span
+                                            class="date text-secondary"><em><%= moment(comment.createdAt).fromNow() %></em></span>
+                                    </p>
+                                    <div class="commentText pt-0 mt-0">
+                                        <p>
+                                            <%= comment.text %>
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="commentEditText">
+                                    <form
+                                        action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT"
+                                        method="POST">
+                                        <div class="form-group">
+                                            <div class="input-group flex-nowrap">
+                                                <textarea class="form-control commenttextBtun"
+                                                    aria-label="With textarea" type="text" name="comment[text]"
+                                                    autocomplete="off" size="50" required><%= comment.text %></textarea>
+                                            </div>
+                                            <div class="btn-group commentpostBtun float-right m-1 mt-0">
+                                                <button class="btn btn-sm btn-info p-1">Save</button>
+
+                                            </div>
+                                    </form>
+                                    <form
+                                        action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=DELETE"
+                                        method="POST" class="d-inline">
+                                        <button class="btn btn-sm btn-danger float-right m-1 mt-0 p-1">Delete</button>
+                                    </form>
+                                    <button class="btn btn-sm btn-secondary float-right m-1 mt-0 p-1">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <% })%>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <button id="myBtn"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script type="text/javascript">
+
+    function headerTransition() {
+        var headerBg = document.getElementById('bgArea');
+        window.addEventListener('scroll', function () {
+            headerBg.style.opacity = 1 - +window.pageYOffset / 500 + '';
+        });
+    };
+    headerTransition();
+
+</script>
+
+<script>
+    function initMap() {
+        var lat = <%= campground.lat %>;
+        var lng = <%= campground.lng %>;
+        var center = { lat: lat, lng: lng };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: center,
+            scrollwheel: false
+        });
+        var contentString = `
+        <strong><%= campground.name %><br />
+        <%= campground.location %></strong>
+        <p><%= campground.description %></p>
+      `
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZLeqdiC7ieacufih8kluMu13WoIPhdHw&callback=initMap"></script>
+
+<%- include("../partials/footer") %>

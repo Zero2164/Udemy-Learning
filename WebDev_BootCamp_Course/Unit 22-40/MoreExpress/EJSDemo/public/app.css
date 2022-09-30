@@ -1,0 +1,21 @@
+body {
+	background-color: #252b33;
+	color: white;
+	text-align: center;
+}
+
+img {
+	width: 700px;
+	height: 800px;
+}
+
+ul {
+
+	text-align: center;
+}
+
+li {
+	list-style: square;
+	padding: 10px;
+	padding-left: 0;
+}

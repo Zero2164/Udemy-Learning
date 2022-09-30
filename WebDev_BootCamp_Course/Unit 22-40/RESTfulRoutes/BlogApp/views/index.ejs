@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+<div class="ui main text container threed">
+    <div class="ui top attached inverted segment ">
+        <div class="ui inverted divided items">
+            <% blogs.forEach(function(blog) { %>
+            <div class="item">
+                <div class="image">
+                    <img class="ui rounded image" src="<%= blog.image %>">
+                </div>
+                <div class="content">
+                    <a id="link" class="ui large header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+                    <div class="meta">
+                        <span class="light"><%= blog.created.toDateString() %></span>
+                    </div>
+                    <div id="indx" class="description">
+                        <p><%- blog.body.substring(0, 200) %>...</p>
+                    </div>
+                    <div class="extra">
+                        <a class="ui floated animated basic teal button inverted" tabindex="0"
+                            href="/blogs/<%= blog._id %>">
+                            <div class="visible content"><span>Read More!</span></div>
+                            <div class="hidden content">
+                                <i class="sizin arrow right icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

@@ -1,0 +1,39 @@
+---------------------------------------------------------------
+Learning Goals 8: 
+Implement further functionality into our API and gain an 
+understanding of:
+---------------------------------------------------------------
+Objectives:
+1. Entity Framework Relationships
+2. Entity Framework Conventions
+3. Seeding Data into the Database
+4. The repository pattern
+5. Using AutoMapper
+
+---------------------------------------------------------------
+Repository Pattern:
+-----------------
+Advantages:
+Minimises duplicate query logic.
+
+Decouples application from persistance framwork.
+
+All Databases queries are centralised and not scattered throughout 
+the app.
+
+Allows us to change Object Relational Mapper(ORM) easily*.
+
+Promotes testability
+ - We can easily mock a repository interface, testing against 
+   the DBContext is more difficult.
+
+-----------------
+Disadvantages:
+Abstraction of an Abstraction - unnecessary.
+
+Each root entity should have it's own repository which means
+more code.
+
+Also need to implement the UnitOfWork pattern to control transactions.
+
+---------------------------------------------------------------

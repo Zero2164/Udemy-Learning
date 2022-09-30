@@ -1,0 +1,121 @@
+/* HTML Tags */
+a.editBtun, button.deletBtn {
+	display: inline-block;
+	font-size: 1.3rem;
+	color: white;
+}
+
+a.editBtun:hover {
+	color: #0d954d;
+}
+
+button.deletBtn:hover {
+	color: #c31919;
+}
+
+div.editBtunGrp {
+	display: none;
+	float: right;
+	height: 40px;
+}
+
+div.commentArea:hover>div.editBtunGrp {
+	display: block;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+li a.btun3, li a i.btun3, #btun3, #btun4 {
+	font-size: 1rem;
+	color: white;
+	text-decoration: none;
+}
+
+li a.btun3:hover, li a i.btun3:hover, #btun3:hover, #btun4:hover, #btun4:hover>#btun4Sub {
+	color: rgb(67, 149, 106);
+	transition: 0.2s;
+}
+
+textarea.commenttextBtun {
+	background-color: rgba(62, 89, 114, 0.274);
+	border: none;
+	max-height: 300px;
+	min-height: 100px;
+	color: white;
+}
+
+textarea.commenttextBtun:enabled {
+	background-color: rgba(62, 89, 114, 0.274);
+	border: none;
+	color: white;
+}
+
+
+
+/* Classes */
+.actvBtun {
+	border: 1px solid #0d954d;
+}
+
+.btun:active, .butn:focus, .btun2:active, .butn2:focus, .linkTag, .linkTag:active, .linkTag:focus, .linkTag:hover, a, a:hover, a:active, a:focus, button, button:hover, button:active, button:focus, .navbar-toggler, .navbar-toggler:hover, .navbar-toggler:active, .navbar-toggler:focus {
+	outline: none;
+	border-color: transparent;
+}
+
+.btun {
+	font-size: 1rem;
+	color: rgb(67, 149, 106);
+	text-decoration: none;
+}
+
+.btun:hover, .btun2:hover {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.65)
+}
+
+.btn-secondary, .btn-light, #cmpImg2Btun {
+	max-height: 2.2rem;
+}
+
+.btn-secondary:hover>span#animHovBtun, .btn-light:hover>span#animHovBtun, .btn-secondary:hover>span#animHovIcn2, #animCmpHovIcn, #cmpImg2Btun:hover>#cmpImg2Text {
+	display: none;
+}
+
+.btn-secondary:hover>i#animHovIcn, .btn-light:hover>i#animHovIcn, .btn-secondary:hover>i#animHovIcn2, #cmpImg2Btun:hover>#animCmpHovIcn {
+	display: block;
+}
+
+
+
+
+
+/* ID's */
+
+#animHovIcn, #animHovIcn2, #animCmpHovIcn {
+	display: none;
+	font-size: 1.6rem;
+}
+
+#btun4 {
+	font-size: 1.3rem;
+}
+
+#formgruBtun {
+	display: none;
+}
+
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	width: 3rem;
+	height: 3rem;
+	background-color: rgba(20, 100, 76, 0.733);
+	color: white;
+	cursor: pointer;
+	border-radius: 50%;
+}

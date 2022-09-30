@@ -1,0 +1,100 @@
+    body {
+        padding-top: 70px;
+        background-image: url("index_image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-family: kanit;
+        height: 100%;
+    }
+    
+   html {
+       height: 100%x;
+   }
+
+
+   h2 {
+       font-weight: 700;
+       font-size: 5em;
+   }
+
+
+   #test {
+       text-align: center;
+       padding: 20%;
+   }
+
+   .navbar-inverse {
+    background-color: #f1f7f7;
+    border-color: #f1f7f7 ;
+   }
+
+   .navbar-inverse .navbar-nav > li > a {
+    color: rgb(19, 18, 18);
+   }
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+    color: rgb(255, 255, 255);
+    background-color: gray;
+   }
+
+    .navbar-inverse .navbar-brand {
+    color: rgb(19, 18, 18);
+    font-size: 25px;
+   }
+
+    .navbar-inverse .navbar-brand:hover { 
+    color: rgb(129, 23, 161);
+   }
+
+   .fa-user-circle {
+       color: rgb(19, 18, 18);
+   }
+   
+   .fa-id-card {
+       color: rgb(19, 18, 18) ;
+   }
+   
+   .navbar-inverse .navbar-toggle {
+       border-color: rgb(241, 238, 238);
+       
+   }
+   
+   .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+       border-radius: 5px 5px 5px 5px;
+       background-color: gray;
+   }
+
+   .navbar-inverse .navbar-toggle .icon-bar {
+     background-color: rgb(34, 34, 34);
+   }
+   
+
+   .fa-paw {
+       color: rgb(129, 23, 161) ;
+       font-size: large;
+   }
+
+   #but {
+       border-radius: 10px 10px 10px 10px;
+       padding: 10px ;
+       color: rgb(41, 41, 41);
+       font-size: large;
+   }
+
+   #but:hover  {
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px ;
+       color: aliceblue;
+       background-color: gray;
+       border-color: gray ;
+   }
+
+
+   .jumbotron {
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+
+   }
+
+

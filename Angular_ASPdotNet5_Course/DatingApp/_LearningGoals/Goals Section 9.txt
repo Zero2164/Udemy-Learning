@@ -1,0 +1,11 @@
+---------------------------------------------------------------
+Learning Goals 9: 
+Implement the components that make up the user interface in our
+client application and gain an understanding of:
+---------------------------------------------------------------
+Objectives:
+1. Using Typescript Types
+2. Using async pipe
+3. Using Bootstrap for styling
+4. Basic CSS tricks to enhance the look
+5. Using a 3rd party photo gallery

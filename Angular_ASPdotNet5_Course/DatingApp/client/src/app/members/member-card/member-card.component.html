@@ -1,0 +1,35 @@
+<div class="card mb-4 bottomBox">
+    <div class="card-img-wrapper">
+        <a class="text-decoration-none" routerLink='/members/{{ member.username }}'>
+            <img src="{{ member.photoUrl || './assets/images/user.png'}}" alt=" {{ member.knownAs }}" class="card-img-top">
+        </a>
+        <ul class="list-inline member-icons animate text-center">
+            <li class="list-inline-item"><button routerLink='/members/{{ member.username }}'
+                    class="btn btn-primary">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                </button></li>
+            <li class="list-inline-item"><button class="btn btn-primary">
+                    <fa-icon [icon]="faHeart"></fa-icon>
+                </button></li>
+            <li class="list-inline-item"><button class="btn btn-primary">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                </button></li>
+        </ul>
+    </div>
+    <a class="text-decoration-none" routerLink='/members/{{ member.username }}'>
+        <div class="card-body p-2">
+            <h4>
+                <fa-icon [icon]="faUser" class="text-primary"></fa-icon>
+            </h4>
+            <h4 class="card-title text-center mb-1 text-secondary">
+                <span class="">{{ member.knownAs }}</span>
+            </h4>
+            <hr>
+
+            <p class="card-text text-dark text-center">
+                <fa-icon [icon]="faGlobeAmericas" class="text-info pr-2"></fa-icon>
+                {{ member.city }}
+            </p>
+        </div>
+    </a>
+</div>

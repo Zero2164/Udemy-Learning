@@ -1,0 +1,44 @@
+ /* p {
+    border: 2px solid blue;
+    width: 50%;
+    height 10%;
+    padding: 10%;
+    margin: 50px auto;
+}  */
+
+h1 {
+    text-align: center;
+    font-size: 220%;
+    font-family: Arial;
+}
+
+table {
+    margin: auto;
+    border: 5px outset;
+}
+
+td {
+    text-align: center;
+}
+
+.T1{
+   height: 100px;
+   width: 100px;
+   
+}
+.T2{
+    border-left: 2px double rgb(34, 32, 32);
+    border-right: 2px double rgb(34, 32, 32);
+
+}
+
+.T3{
+    border-top: 2px double rgb(34, 32, 32);
+    border-bottom: 2px double rgb(34, 32, 32);
+
+}
+.T4{
+    border: 2px double rgb(34, 32, 32);
+
+}
+

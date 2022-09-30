@@ -1,0 +1,308 @@
+html {
+    background-color: rgb(47, 65, 85);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+textarea {
+    -moz-user-select: text;
+}
+
+h1 {
+    background-color: rgb(0, 140, 255);
+    padding: 3%;
+    margin-top: 0;
+    padding-top: 4%;
+    margin-bottom: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: normal;
+    width: 100%;
+    float: left;
+}
+
+input {
+    display: none;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    width: 100%;
+    margin-top: 0;
+    padding: 2%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-bottom: 2px outset rgba(128, 128, 128, 0.274);
+}
+
+input:hover {
+    color: rgb(0, 140, 255);
+}
+
+input:focus {
+    color: rgb(0, 140, 255);
+    border: 2px solid rgb(0, 140, 255);
+    outline: none;
+}
+
+li {
+    float: left;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+li::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+li:nth-child(2n) {
+    background-color: #f7f7f7;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: rgb(240, 240, 240);
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 100px;
+    width: 400px;
+    height: 500px;
+    border-radius: 2%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.title {
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ruda', sans-serif;
+}
+
+.content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    float: left;
+}
+
+.delet {
+    display: inline-block;
+    width: 0;
+    min-width: 0;
+    min-height: 40px;
+    font-size: 20px;
+    padding: 1%;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+    background-color: red;
+    opacity: 0;
+    transition: 0.2s linear;
+}
+
+.fa-trash-alt {
+    visibility: hidden;
+}
+
+li:hover .delet {
+    width: 40px;
+    min-width: 40px;
+    opacity: 1.0;
+}
+
+li:hover .fa-trash-alt {
+    visibility: visible;
+    opacity: 1.0;
+}
+
+.delet:active {
+    cursor: pointer;
+    color: black;
+    background-color: rgb(202, 196, 196);
+}
+
+.menuBar {
+    display: none;
+    float: left;
+    padding: 0;
+    z-index: 900;
+    border-bottom: 2px outset rgba(128, 128, 128, 0.274);
+    width: 100%;
+    background-color: transparent;
+}
+
+.activedelAll {
+    display: block;
+}
+
+.deletAllbtn {
+    display: none;
+    float: left;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    padding: 1%;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+    background-color: red;
+}
+
+.deletAll:active {
+    cursor: pointer;
+    color: black;
+    background-color: rgb(202, 196, 196);
+}
+
+.exitAppBtn {
+    float: right;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    padding: 1%;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(0, 140, 255);
+}
+
+.undo {
+    display: none;
+    float: left;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    padding: 1%;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(34, 157, 168);
+}
+
+.checked {
+    text-decoration: line-through;
+    color: rgb(172, 172, 172);
+}
+
+.listItm {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    padding-left: 0;
+    margin-left: 0;
+    padding: 3%;
+} 
+
+/* Tooltip Text */
+.tooltiptext {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* Tooltip Text */
+
+.navIco {
+    float: right;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    margin-right: 7%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.navIco:hover {
+    color: rgb(189, 189, 189);
+}
+
+
+.taskicon {
+    float: left;
+    border: none;
+    background-color: transparent;
+    margin-right: 3%;
+    font-size: 30px;
+    color: white;
+}
+
+.TodoApp {
+    display: none;
+}
+
+.startTodoApp {
+    margin-top: 50%;
+    font-size: 10rem;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+}
+
+.startTodoApp:hover {
+    color: rgb(18, 158, 251);
+}
+
+.startTodoApp:active {
+    color: white;
+}
+
+.MainContain {
+    background-color: transparent;
+    text-align: center;
+}
+
+

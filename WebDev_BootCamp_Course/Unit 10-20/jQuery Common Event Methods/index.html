@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Common Event Methods</title>
+</head>
+
+<body>
+    <h1>jQuery Common Event Methods Demo Page</h1>
+
+    <input type="text" placeholder="Enter Your Fav Number!!">
+
+    <button class="buttnsONE">Click Me 1</button>
+    <button class="buttnsTWO">Click Me 2</button>
+    <button class="buttnsTHREE">Click Me 3</button>
+
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <script>
+        var swtch = false;
+        var myArr = [];
+
+        $('input').val("");
+        
+        //click() Event Method
+        $('button').click(function () {
+            if ($(this).hasClass("buttnsONE")) {
+                alert("You clicked numba one!");
+            } else if ($(this).hasClass("buttnsTWO")) {
+                alert("You clicked numba two!");
+            } else if ($(this).hasClass("buttnsTHREE")) {
+                alert("You clicked numba three!");
+            } else {
+                return false;
+            };
+        });
+        
+        //keypress() Event Method
+        $('input').keypress(function (event) {
+            if (event.which === 13) {
+                if (isNaN($('input').val())) {
+                    alert("CANNOT BE LETTERS!");
+                    $('input').val("");
+                    return false;
+                } else if ($('input').val() === "") {
+                    alert("NEEDS TO BE A WORD!");
+                    $('input').val("");
+                    return false;
+                } else {
+                    myArr.push($('input').val())
+                    console.log($('input').val());
+                    $('input').val("");
+                    console.log(myArr);
+                };
+            };
+        });
+
+        //on() Event Method
+        $('h1').on("mouseenter", function () {
+            if (!swtch) {
+                $(this).css("color", "green");
+                swtch = true;
+            } else if (swtch) {
+                $(this).css("color", "black");
+                swtch = false;
+            };
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.cent {
+    margin-top:12rem;
+}
+
+.centPlus {
+    margin-top:16rem;
+}
+
+.imgTransFrm {
+    height: 40rem;
+    transform: rotate(20deg);
+}
+
+.imgTransFrm2 {
+    height: 40rem;
+    transform: rotate(-20deg);
+    opacity: 0.9;
+}

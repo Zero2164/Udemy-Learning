@@ -1,0 +1,75 @@
+<ng-container *ngIf="member">
+    <div class="col-12 bg-primary pt-5 mt-5">
+        <div class="container pageView4">
+            <h1> {{ member.knownAs }} </h1>
+            <div class="m-2">
+                <button class="btn btn-lg btn-primary m-3" (click)="heartClicked()">
+                    <fa-icon class="fontSizeUp" [icon]="faHeart" [style]="hearted"></fa-icon>
+                </button>
+                <button class="btn btn-lg btn-primary m-3" routerLink="/messages">
+                    <fa-icon class="fontSizeUp" [icon]="faEnvelope"></fa-icon>
+                </button>
+            </div>
+            <img src="{{ member.photoUrl || './assets/images/user.png' }}"
+                class="rounded-circle col-8 col-lg-4 mt-1 mb-2 btmShadow p-2" alt=" {{ member.knownAs }} ">
+            <div class="column p-3 text-center col-12">
+                <p class="card-text">
+                    Last active: {{ member.lastActive | timeago }}
+                </p>
+            </div>
+            <div class="card-body row justify-content-center">
+                <div class="column p-3 text-center col-12 col-lg-2">
+                    <h4>Age</h4>
+                    <h2 class="card-text">
+                        {{ member.age }}
+                    </h2>
+                </div>
+                <div class="border-right bg-white d-none d-lg-block"></div>
+                <div class="border-bottom bg-white d-block d-lg-none col-12 m-2"></div>
+                <div class="column p-3 text-center col-12 col-lg-2">
+                    <h4>Gender</h4>
+                    <h2 class="card-text">
+                        <fa-icon *ngIf="member.gender == female" [icon]="faVenus"></fa-icon>
+                        <fa-icon *ngIf="member.gender == male" [icon]="faMars"></fa-icon>
+                    </h2>
+                </div>
+                <div class="border-bottom bg-white d-block d-lg-none col-12 m-2"></div>
+                <div class="column p-3 text-center col-12 mb-2">
+                    <h3 class="card-title d-inline">
+                        <fa-icon [icon]="faGlobeAmericas"></fa-icon>
+                    </h3>
+                    <h5 class="card-text pt-2">
+                        {{ member.country }}, {{ member.city }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 bg-white pageView3 text-dark">
+        <tabset class="member-tabset" [justified]="true">
+            <tab heading='About'>
+                <div class="container pt-5">
+                    <h4 class="pt-5">Description</h4>
+                    <p class="pb-5"> {{ member.introduction }} </p>
+                    <hr class="m-2">
+                    <h4 class="pt-5">Looking for</h4>
+                    <p> {{ member.lookingFor }} </p>
+                </div>
+            </tab>
+            <tab heading='Interests'>
+                <div class="container pt-5">
+                    <h4>Interests</h4>
+                    <p> {{ member.interests }} </p>
+                </div>
+            </tab>
+            <tab heading='Photos'>
+                <div class="container p-5">
+                    <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery galStyle"></ngx-gallery>
+                </div>
+            </tab>
+            <tab heading='Messages'>
+                <p>Messages will go here</p>
+            </tab>
+        </tabset>
+    </div>
+</ng-container>

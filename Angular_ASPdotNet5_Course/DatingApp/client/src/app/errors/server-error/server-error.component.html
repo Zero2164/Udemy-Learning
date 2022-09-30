@@ -1,0 +1,46 @@
+<div class="topBox bg-white p-5" [class]="pageV">
+    <div class="container">
+        <div class="column text-dark pl-lg-5 pr-lg-5 mr-lg-5 ml-lg-5 mt-5 pt-5 mb-0 pb-0 text-left textSizUp">
+            <h1>Error 500</h1>
+            <hr class="bg-white col-auto">
+            <p>Internal Server Error</p>
+            <p>To fix this, <em>please refresh the page</em>.</p>
+            <ng-container *ngIf="error">
+                <button class="btn btn-lg btn-danger mb-2" (click)="errClicked()"><span *ngIf="!errClick">Show Error</span><span *ngIf="errClick">Hide Error</span></button>
+            </ng-container>
+        </div>
+    </div>
+    <ng-container *ngIf="error">
+        <div class="container" *ngIf="errClick">
+            <div class="pl-lg-5 pr-lg-5 mr-lg-5 ml-lg-5 pt-0 mt-0">
+                <div class="card text-dark text-left">
+                    <div class="card-header">
+                        <p class="text-danger font-weight-bold">Error: <br> {{ error.message }} </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="font-weight-bold">Note: If you are seeing this then Angular is probably not to blame.</p>
+                        <p>What to do next?</p>
+                        <ol>
+                            <li>Open the chrome dev tools.</li>
+                            <li>Inspect the network tab.</li>
+                            <li>Check the failing request.</li>
+                            <li>Examine the request URL - make sure it is correct.</li>
+                            <li>Reproduce the error in Postman - if we see the same response, then the issue is not with Angular.</li>
+                        </ol>
+                        <p>Following is the stack trace - this is where your investigation should start!</p>
+                        <div class="card mt-2 p-4" style="height: 20rem; overflow-x: auto;">
+                            <code>
+                                {{error.details}} 
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="container justify-content-center mt-5">
+    <h3>...If you are still here <span class="text-danger">PANIC!</span></h3>
+</div>
+
+<app-footer></app-footer>

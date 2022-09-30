@@ -1,0 +1,33 @@
+<%- include("partials/headerPlain") %>
+<div class="btnbg3">
+	<div class="container">
+		<header>
+			<div class="container text-center">
+				<h1 id="landPage" class="text-center"><strong>YelpCamp</strong></h1>
+				<p id="landPagesub">Find your next adventure today</p>
+				<div class="d-flex justify-content-center align-items-center m-2">
+					<div id="navSrch" class="text-center pb-0">
+						<form class="srch-box" action="/campgrounds/campground/Srch" method="GET" autocomplete="off">
+							<span id="navSrchBtn bg-dark" class="srch-butn m-auto ml-md-0">
+								<i class="fas fa-search"></i>
+							</span>
+							<input id="navSrchInput" class="srch-txt" type="text" name="search" value=""
+								placeholder="Campground Search...">
+						</form>
+					</div>
+				</div>
+				<a id="landPageBtun" class="btn btn-md btn-light m-1" href="/campgrounds"><i
+						class="fas fa-campground pr-1"></i>Get Started!</a>
+			</div>
+		</header>
+	</div>
+</div>
+<ul class="slideshow">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<%- include("partials/footerPlain") %>

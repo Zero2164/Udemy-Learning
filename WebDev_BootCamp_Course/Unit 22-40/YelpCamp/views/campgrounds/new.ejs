@@ -1,0 +1,48 @@
+<%- include("../partials/header") %>
+<div class="btnbg mt-5 pt-5 mb-5 pb-5">
+    <div class="container pageContent text-center pb-5 mb-5 mt-5 col-11 col-md-8 col-lg-0 col-xl-7">
+        <div class="container col-12">
+            <h1>Campground not in YelpCamp?</h1>
+            <h4>Add the details below!</h4>
+            <div class="row">
+                <div class="formArea2 col-12">
+                        <form action="/campgrounds" method="POST" class="text-white text-left">
+                            <div class="form-group">
+                                <label for="cname">Name</label>
+                                <input id="cname" class="form-control" type="text" name="name" placeholder="Enter Name" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cprice">Price</label>
+                                <input id="cprice" class="form-control" type="number" name="price" placeholder="Enter Price Per/Night (i.e. 5.00)" autocomplete="off" step="0.01"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cimg">Campground Image URL</label>
+                                <input id="cimg" class="form-control" type="text" name="img" placeholder="Enter Image URL" autocomplete="off"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Location">Location</label>
+                                <input class="form-control" type="text" name="location" id="Location" placeholder="Enter Location (i.e Yarra Park, VIC) (Optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="cdescription">Description</label>
+                                <div class="input-group">
+                                    <textarea id="cdescription" class="form-control desc" aria-label="With textarea" type="text" name="description"
+                                        placeholder="Enter Description" autocomplete="off" size="50" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-md btn-success btn-block">Add Campground</button>
+                            </div>
+                        </form>
+                        <a href="/campgrounds" class="btn btn-md btn-secondary btn-block"><i id="animHovIcn" class="fas fa-arrow-left pr-2"></i><span id="animHovBtun">Cancel</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="background">
+	<li></li>
+</ul>
+<%- include("../partials/footerPlain") %>

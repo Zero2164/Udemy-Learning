@@ -1,0 +1,129 @@
+<!-- Popper JS CDN-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<!-- Ajax JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<!-- Jquery JS CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<!-- Bootstrap 4 JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<!-- My JS In-line Script -->
+<script>
+    function focusInput() {
+        $('.srch-butn').on('click', function () {
+            $('.srch-txt').fadeIn(300);
+            $('.srch-txt').focus();
+            $('.srch-box').addClass('activeSearch');
+            $('.srch-butn').addClass('activeSearchbutn');
+        });
+        $('.srch-butn').on('mouseover', function () {
+            $('.srch-txt').fadeIn(300);
+            $('.srch-txt').focus();
+            $('.srch-box').addClass('activeSearch');
+            $('.srch-butn').addClass('activeSearchbutn');
+        });
+        $('.srch-txt').on('focusout', function () {
+            $('.srch-txt').fadeOut(300);
+            $('.srch-box').removeClass('activeSearch');
+            $('.srch-butn').removeClass('activeSearchbutn');
+        });
+    };
+    focusInput();
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    function navbtn() {
+        $('#buttOp').on('click', function () {
+            $('#opnFoldr').toggleClass('fa-map');
+            $('#myCollapsible').slideToggle(100);
+        });
+    };
+
+    function commentbtn() {
+        $('#revBtun').on('click', function () {
+            $('#formgruBtun').slideDown(200);
+            $('#revBtun').fadeOut(100);
+            $('#textBtun').focus();
+            $('#myBtn').css('visibility', 'hidden');
+        });
+        $('#awayBtun').on('click', function () {
+            $('#formgruBtun').slideUp(200);
+            $('#revBtun').fadeIn(100);
+            $('#myBtn').css('visibility', 'visible');
+        });
+        $('#textBtun').on('click', function () {
+            $('#myBtn').css('visibility', 'hidden');
+        });
+        $('#textBtun').on('focusout', function () {
+            $('#myBtn').css('visibility', 'visible');
+        });
+    };
+    var isTrue = true;
+    function openImg() {
+
+
+        $('#cmpImg2Btun').on('click', function () {
+            if (isTrue) {
+                $('.cmpImg2').slideDown(300, function () {
+                    $('#cmpImg2Text').text('Hide Image');
+                    $('#animCmpHovIcn').removeClass('fa-chevron-down');
+                    $('#animCmpHovIcn').addClass('fa-chevron-up');
+                    isTrue = false;
+                });
+            } else if (!isTrue) {
+                $('.cmpImg2').slideUp(300, function () {
+                    $('#cmpImg2Text').text('Show Image');
+                    $('#animCmpHovIcn').addClass('fa-chevron-down');
+                    $('#animCmpHovIcn').removeClass('fa-chevron-up');
+                    isTrue = true;
+                });
+            }
+
+
+
+        });
+
+    };
+
+    // function editComment() {
+    //     $('.editBtun').on('click', function () {
+    //         $('editBtunGrp').fadeOut(300);
+    //         $('.commentText').fadeOut(300);
+    //         $('.commentEditText').fadeIn(300);
+    //         $(this).focus();
+    //         $('.closeEditBtun').fadeIn(300);
+    //         $('.commentArea').addClass('bg-dark');
+    //     });
+    //     $('.closeEditBtun').on('click', function () {
+    //         location.reload();
+    //     });
+    // }
+    // editComment();
+    function scrollingToTheTop() {
+        window.onscroll = function () { scrollTopFunc() };
+
+        function scrollTopFunc() {
+            if ($('body').scrollTop() >= 20 || $('html').scrollTop() >= 20) {
+                $('#myBtn').css('display', 'block');
+            } else if ($('body').scrollTop() < 20 || $('html').scrollTop() < 20) {
+                $('#myBtn').css('display', 'none');
+            }
+        };
+        $('#myBtn').on('click', function () {
+            $('body').scrollTop(0);
+            $('html').scrollTop(0);
+        });
+    }
+    openImg();
+    scrollingToTheTop();
+    navbtn();
+    commentbtn();
+</script>
+
+</body>
+
+</html>

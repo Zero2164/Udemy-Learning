@@ -1,0 +1,70 @@
+---------------------------------------------------------------
+Learning Goals 5: 
+Implement the login and register functionality into the app
+as well as understanding:
+---------------------------------------------------------------
+Objectives:
+1. Creating components using the Angular CLI
+2. Using Angular Template Forms
+3. Using Angular Services
+4. Understanding Observables
+5. Using Angular structural directives to conditionally display
+   elements on a page
+6. Component communication from a parent to child
+7. Component communication from a child to parent
+---------------------------------------------------------------
+
+What are Observables?:
+
+New Standard for managing async data included in ES7 (ES2016).
+
+Introduced in Angular V2
+
+Observables are a lazy collection of multiple values over time
+
+Observables are similar to newsletters:
+  - Only subscribers of the newsletter receive the newsletter
+  - If no-one subscribes to the newsletter it probably will not be printed
+
+*****************************
+
+Promises VS Observables
+
+Promises:
+Provides a single future value
+Not lazy
+Execution CANNOT be cancelled
+
+Observables:
+Emits multiple values over time
+Lazy
+Execution CAN be cancelled
+Can use with various operators - map, filter, reduce, and other operators
+
+*****************************
+Getting data from Observables:
+
+Subscribe Method:
+-Subscribes to Observable only, however when using any HTTP requests they typically complete automatically, thus unsubscribing is not necessary.
+
+getMembers() {
+  this.service.getMembers().subscribe(members => {
+    this.members = members
+  }, error => {
+    console.log(error);
+  }, () => {
+    console.log('Completed!');
+  })
+}
+
+ToPromise Method:
+
+getMembers() {
+  return this.http.get('api/users).toPromise()
+}
+
+
+Async Pipe Method:
+-Automatically Subscribes/Unsubscribes from the Observable
+
+<li *ngFor="let member of service.getMembers() | async">{{member.username}}</li>

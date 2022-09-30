@@ -1,0 +1,10 @@
+<div class="column justify-content-center footr mt-5 p-5 mb-5">
+    <div>
+        <a class="footertext text-decoration-none p-3" routerLink="/">Home</a>
+        <a class="footertext text-decoration-none p-3" routerLink="/about">About</a>
+        <ng-container *ngIf="!(accountService.currentUser$ | async)">
+            <a class="footertext text-decoration-none p-3" routerLink="/login-or-register">Login or Register</a>
+        </ng-container>
+    </div>
+    <p class="footertext p-5">Copyright @ACOFFEE - Kyle Dating App 2020 - 2021</p>
+</div>

@@ -1,0 +1,13 @@
+html, body {
+    height: 100px;
+    margin: 0;
+}
+
+body.dark {
+    background-color: #006e99;
+}
+
+#myCanvas {
+    margin: auto;
+    width: 100%;
+}

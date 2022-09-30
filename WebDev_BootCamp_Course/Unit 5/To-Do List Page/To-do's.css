@@ -1,0 +1,14 @@
+li {
+    border: 2px solid red;
+}
+
+/* Reference ID Selector by "#insertname" */
+#list2 {
+    background-color: cyan;
+}
+
+/* Reference Class Selector by ".insertname"  */
+.Highlight {
+    background-color: yellow;
+    text-decoration: line-through;
+}

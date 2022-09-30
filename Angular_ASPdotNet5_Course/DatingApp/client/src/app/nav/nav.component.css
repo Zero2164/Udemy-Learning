@@ -1,0 +1,52 @@
+nav.navbar {
+    background-color: rgb(219, 74, 16);
+}
+
+
+a.dropdown-item, a.nav-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.dropdown-item, a.dropdown-item:hover {
+    background-color: white;
+}
+
+a.dropdown-item {
+    color: rgb(156, 156, 156);
+}
+
+a.dropdown-item:hover {
+    color: rgb(219, 74, 16);
+}
+
+fa-icon, span.usr {
+    color: rgba(255,255,255,.5);
+    font-size: 1.2rem;
+}
+
+fa-icon:hover, a.nav-link:hover, button.drpDownTog:focus > fa-icon, button.drpDownTog:hover > fa-icon, button.drpDownTog:hover > span.usr, button.drpDownTog:focus > span.usr {
+    color: white;
+}
+
+button.drpDownTog {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+button.drpDownTog {
+    border-radius: 50%;
+}
+
+button.drpDownTog:focus {
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+}
+
+.imgStyle {
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+}

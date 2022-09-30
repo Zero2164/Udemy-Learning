@@ -1,0 +1,38 @@
+----------------------------------------------------
+Learning Goals 11: 
+Implement photo upload functionality in the application and
+gain an understanding of:
+---------------------------------------------------------------
+Objectives:
+1. Photo storage options
+2. Adding related entities
+3. Using a 3rd party API
+4. Using the Debugger
+5. Updating and deleting resources
+6. What to return when creating resources in a REST based API
+
+
+---------------------------------------------------------------
+Photo Storage Options
+
+-Storing as binary large objects - Not efficient, Databases are 
+efficient at returning data/relational data, and compressing and 
+managing these files is not for DB's
+
+-Storing in the file system/server - Is efficient, but can run 
+out of space
+
+-Storing in the cloud service - Is efficient, and does not run 
+out of space, perfect for managing photo storage.
+---------------------------------------------------------------
+
+Photo Storage Choice for this project:
+
+"Cloudinary" - Provides a free tier, 10gb of storage
+
+---------------------------------------------------------------
+How cloud storage works:
+
+Client uploads photo to API with JWT -> Server uploads the photo to Cloudinary Account (Ideally only authorised users)
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+-> Cloudinary stores photo, sends response back to the Server -> Api saves the photo URL and Public ID to the DB -> 201 Created response sent to client with location header

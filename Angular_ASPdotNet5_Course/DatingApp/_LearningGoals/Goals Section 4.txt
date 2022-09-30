@@ -1,0 +1,37 @@
+---------------------------------------------------------------
+Learning Goals 4: 
+Implement basic User authentication in our app and have an understanding of:
+---------------------------------------------------------------
+Objectives:
+1. How to store passwords in the Database
+2. Using inheritence in C# - DRY
+3. Using the C# debugger
+4. Using Data Transfer Objects (DTOs)
+5. Validation
+6. JSON Web Tokens (JWTs)
+7. Using Services in C#
+8. Middleware
+9. Extension methods - DRY
+---------------------------------------------------------------
+
+Where do I start?
+
+Write requirements:
+
+Users should be able to log in
+Users should be able to register 
+Users should be able to view other Users
+Users should be able to privately message other Users
+
+Keyword "Users" - Everything Starts with the Users.
+
+---------------------------------------------------------------
+JSON Web Tokens (JWT)s - 
+
+Benefits of JWT-
+
+No session to manage - JWTs are self contained Tokens
+Portable - A Single token can be used with multiple backends
+No Cookies required - mobile friendly
+Performance - Once a token is issued, there is no need to make a database request to verify a users authentication.
+

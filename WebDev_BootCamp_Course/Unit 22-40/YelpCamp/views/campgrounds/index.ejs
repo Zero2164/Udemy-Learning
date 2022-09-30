@@ -1,0 +1,78 @@
+<%- include("../partials/headerbody") %>
+<div class="header">
+	<div id="bgArea"></div>
+	<div class="container mt-5 col-12 pb-0 mb-0">
+		<header class="jumbotron bodyPage mb-0">
+			<div class="container text-center">
+				<h1 class="pageHeader text-center text-break">
+					<% if(!currentUser) { %>
+					Welcome to YelpCamp
+					<% } else { %>
+					Welcome to YelpCamp,<br><%= currentUser.username %>
+					<%  }%>
+				</h1>
+				<p class="pageHeaderSubTxt">View our hand-picked campgrounds from Australia!</p>
+			</div>
+		</header>
+	</div>
+</div>
+<section class="btnbg">
+	<div class="container pageContent col-12">
+		<div class="container scrollBox">
+			<div class="row text-center">
+				<% cmpGrounds.forEach(function(campground){ %>
+				<div class="cmpBckgrnd pb-5 mb-3 col-sm-6">
+					<div class="thumbnail">
+						<a class="linkTag" href="/campgrounds/<%= campground._id %>">
+							<img class="cmpImg" src="<%= campground.img %>">
+							<div class="caption">
+								<h4>
+									<%= campground.name %>
+								</h4>
+							</div>
+						</a>
+					</div>
+				</div>
+				<% });%>
+			</div>
+		</div>
+		<div class="container mt-0 pt-0">
+			<% if(!currentUser) { %>
+			<div class="container col-12 mt-0 pt-0">
+				<div class="footerText text-white m-auto text-center pb-5 mb-3 mt-0 pt-0">
+					<hr class="bg-light">
+					<p class="d-inline pr-2">Login/Sign Up to Add a Campground</p>
+					<div class="btn-group">
+						<a href="/login" class="btn btn-md btn-success"><span>Login</span></a>
+						<a href="/register" class="btn btn-md btn-outline-primary"><span>Sign Up</span></a>
+					</div>
+				</div>
+			</div>
+			<% } else { %>
+			<div class="container col-12 mt-0 pt-0">
+				<div class="footerText text-white m-auto text-center pb-5 mb-3 mt-0 pt-0">
+					<hr class="bg-light">
+					<a class="nav-link btn btn-md btn-success" href="/campgrounds/new">Add New Campground</a>
+				</div>
+			</div>
+			<%  }%>
+		</div>
+
+	</div>
+
+	<button id="myBtn"><i class="fas fa-chevron-up"></i></button>
+</section>
+
+<script type="text/javascript">
+
+	function headerTransition() {
+		var headerBg = document.getElementById('bgArea');
+		window.addEventListener('scroll', function () {
+			headerBg.style.opacity = 1 - +window.pageYOffset / 350 + '';
+		});
+	};
+	headerTransition();
+
+</script>
+
+<%- include("../partials/footer") %>

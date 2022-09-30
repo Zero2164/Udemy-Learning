@@ -1,0 +1,83 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+    <h2 class="text-center text-primary">Sign Up</h2>
+    <hr class="bg-light" *ngIf='nextActive <= 1'>
+    <ng-container *ngIf='nextActive === 2'>
+        <div class="container pt-2 d-flex justify-content-center m-auto">
+            <div>
+                <tabset>
+                    <tab heading="Gender *">
+                        <div class="form-group col-md-7 m-auto">
+                            <label for="gender" class="control-label col-12 pt-3">I identify as:</label>
+                            <div class="text-left flex-column justify-content-center col-12">
+                                <label class="radio-inline ">
+                                    <input type="radio" value="male" formControlName="gender" > Male
+                                </label>
+                                <br>
+                                <label class="radio-inline ">
+                                    <input type="radio" value="female" formControlName="gender" > Female
+                                </label>
+                                <br>
+                                <label class="radio-inline ">
+                                    <input type="radio" value="unspecified" formControlName="gender"> Unspecified
+                                </label>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab heading="Known As *">
+                        <div class="form-group col-md-7 m-auto">
+                            <label for="knownAs" class="pt-3">Known As</label>
+                            <app-text-input [formControl]='registerForm.controls["knownAs"]' [label]='"Known As"'
+                                [type]='"text"'>
+                            </app-text-input>
+                        </div>
+                    </tab>
+                    <tab heading="D.O.B *">
+                        <div class="form-group col-md-7 m-auto">
+                            <label for="dateOfBirth" class="pt-3">Date of Birth</label>
+                            <app-text-input [formControl]='registerForm.controls["dateOfBirth"]'
+                                [label]='"Date of Birth"' [type]='"text"'></app-text-input>
+                        </div>
+                    </tab>
+                    <tab heading="City/Country *">
+                        <div class="form-group col-md-7 m-auto">
+                            <label for="city" class="pt-3">City</label>
+                            <app-text-input [formControl]='registerForm.controls["city"]' [label]='"City"'
+                                [type]='"text"'>
+                            </app-text-input>
+                            <label for="country">Country</label>
+                            <app-text-input [formControl]='registerForm.controls["country"]' [label]='"Country"'
+                                [type]='"text"'>
+                            </app-text-input>
+                        </div>
+                    </tab>
+
+                </tabset>
+            </div>
+        </div>
+    </ng-container>
+    <div class="container px-5">
+        <ng-container *ngIf="nextActive === 0">
+            <label for="username">Create a username</label>
+            <app-text-input [formControl]='registerForm.controls["username"]' [label]='"Username"' [type]='"text"'>
+            </app-text-input>
+        </ng-container>
+        <ng-container *ngIf="nextActive === 1">
+            <label for="username">Create a password</label>
+            <app-text-input [formControl]='registerForm.controls["password"]' [label]='"Password"' [type]='"password"'>
+            </app-text-input>
+            <app-text-input [formControl]='registerForm.controls["confirmPassword"]' [label]='"Confirm password"'
+                [type]='"password"'></app-text-input>
+        </ng-container>
+        <div class="pb-3"></div>
+        <div class="btn-group">
+            <button class="btn btn-secondary btn-lg mr-2" type="button" *ngIf="nextActive"
+                (click)="goBack()">Back</button>
+            <button class="btn btn-primary btn-lg mr-2" type="button" *ngIf='registerForm.controls["username"].value && nextActive === 0'
+                (click)="activateNext()">Next</button>
+            <button class="btn btn-primary btn-lg mr-2" type="button" *ngIf='(registerForm.controls["password"].value === registerForm.controls["confirmPassword"].value) && (registerForm.controls["password"].value.length >= 4 && nextActive === 1)'
+                (click)="activateNext()">Next</button>
+            <button class="btn btn-primary btn-lg mr-2" type="submit" *ngIf="nextActive === 2" [disabled]='conditionals()' >Register</button>
+
+        </div>
+    </div>
+</form>

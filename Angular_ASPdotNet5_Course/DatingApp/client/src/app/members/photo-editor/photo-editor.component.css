@@ -1,0 +1,31 @@
+img.img-thumbnail {
+    height: 200px;
+    min-width: 200px !important;
+    margin-bottom: 1rem;
+}
+.nv-file-over {
+    background-color: lightslategray;
+    color: white;
+}
+
+.imgContainer {
+    position: absolute;
+}
+
+.imgContainer:hover > .imgBtns {
+    opacity: 1;
+    transition: 2ms;
+}
+
+.imgBtns {
+    opacity: 0;
+    position: relative;
+}
+
+.scrllBox {
+    height: 40vh;
+    overflow: auto;
+    padding-bottom: 5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
